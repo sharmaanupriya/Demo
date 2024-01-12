@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #container6 {
+            background: linear-gradient(to bottom, #070736, #070736);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 55%;
+            left: 50%;
+            width: 80%;
+            max-width: 400px;
+            transform: translate(-50%, -50%);
+            padding: 35px;
+            border-radius: 10px;
+            display: inline-block;
+            text-align: left;
+            color: #ffffff;
+        }
+        
+        #sixButtonContainer {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-rows: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .sixCircularButton {
+            background-color: #3498db;
+            color: #fff;
+            width: 6vw;
+            height: 6vw;
+            font-size: 1vw;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.3s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .sixCircularButton:hover {
+            background: #2670b8;
+        }
+        
+        .sixCircularButton.selected {
+            background-color: #d5bbf7;
+            color: #C37CDC;
+        }
+        
+        #buttonContainer {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        #wellBackBtn,
+        #wellNextBtn {
+            width: 48%;
+            background: rgb(253, 253, 253);
+            color: #070736;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 20px;
+            border: 1px solid #3574b3;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+            text-align: center;
+        }
+        
+        #wellBackBtn:hover,
+        #wellNextBtn:hover {
+            background: rgb(255, 123, 0);
+            color: #fff;
+        }
+        
+        /* Media query for smaller screens */
+        @media screen and (max-width: 500px) {
+            #container6 {
+                width: 90%;
+            }
+        
+            #sixButtonContainer {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container6">
+        <div id="sixButtonContainer"></div>
+        <div id="buttonContainer">
+            <button id="wellBackBtn" onclick="wellPrevious()">Previous</button>
+            <button id="wellNextBtn" onclick="wellNext()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to generate Ninty-Six Well
+        function generate6WellButtons(numWells) {
+            const container = document.getElementById('sixButtonContainer');
+            container.innerHTML = '';
+
+            for (let i = 1; i <= numWells; i++) {
+                const button = document.createElement('button');
+                button.className = 'sixCircularButton';
+                button.innerHTML = `<span>${i}</span>`;
+                button.onclick = () => toggleWellButton6(button);
+                container.appendChild(button);
+            }
+        }
+
+        // Function to toggle the selected state of a button
+        function toggleWellButton6(button) {
+            button.classList.toggle('selected');
+            // Add logic for handling the selected button
+            console.log('Button clicked:', button.textContent);
+        }
+
+        // Function for the "Previous" button
+        function wellPrevious() {
+            console.log('Previous button clicked');
+        }
+
+        // Function for the "Next" button
+        function wellNext() {
+            console.log('Next button clicked');
+        }
+
+        // Call the function to generate buttons for 24 wells
+        generate6WellButtons(6);
+    </script>
+</body>
+
+</html>

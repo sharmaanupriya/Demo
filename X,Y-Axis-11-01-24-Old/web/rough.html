@@ -1,0 +1,260 @@
+
+<!-- px -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #container {
+            background: linear-gradient(to bottom, #070736, #070736);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 45%;
+            left: 50%;
+            width: 40%;
+            transform: translate(-50%, -50%);
+            font-size: 25px;
+            padding: 365px 350px;
+            border-radius: 10px;
+            display: inline-block;
+            text-align: left;
+            color: #ffffff;
+            padding-right: 0px;
+        }
+
+        #ninetySixButtonContainer {
+            position: absolute;
+            top: 47%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+            gap: 5px;
+            padding: 35px;
+            border-radius: 15px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .ninetySixCircularButton {
+            background-color: #3498db;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            font-size: 18px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.3s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .ninetySixCircularButton:hover {
+            background: #2670b8;
+        }
+
+        .ninetySixCircularButton.selected {
+            background-color: #d5bbf7;
+            color: #C37CDC;
+        }
+
+        #wellBackBtn {
+            width: 130px;
+            background: rgb(253, 253, 253);
+            color: #070736;
+            border: none;
+            position: fixed;
+            top: 90%;
+            left: 30%;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            border: 1px solid #3574b3;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+            margin: 5px;
+            text-align: center;
+        }
+
+        #wellBackBtn:hover {
+            background: rgb(255, 123, 0);
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="ninetySixButtonContainer"></div>
+        <button id="wellBackBtn" onclick="wellPrevious()">Previous</button>
+    </div>
+
+    <script>
+        // Function to generate Ninty-Six Well
+        function generate96WellButtons(numWells) {
+            const container = document.getElementById('ninetySixButtonContainer');
+            container.innerHTML = '';
+
+            for (let i = 1; i <= numWells; i++) {
+                const button = document.createElement('button');
+                button.className = 'ninetySixCircularButton';
+                button.innerHTML = `<span>${i}</span>`;
+                button.onclick = () => toggleWellButton(button);
+                container.appendChild(button);
+            }
+
+        }
+
+        // Function to toggle the selected state of a button
+        function toggleWellButton(button) {
+            button.classList.toggle('selected');
+            // Add logic for handling the selected button
+            console.log('Button clicked:', button.textContent);
+        }
+
+        // Call the function to generate buttons for 24 wells
+        generate96WellButtons(96);
+    </script>
+
+</body>
+
+</html>
+
+<!-- vw -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #container96 {
+            background: linear-gradient(to bottom, #070736, #070736);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 22% 56%;
+            border-radius: 10px;
+            display: inline-block;
+            text-align: left;
+            color: #ffffff;
+            padding-right: 0px;
+        }
+
+        #ninetySixButtonContainer {
+            position: absolute;
+            top: 46%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+            gap: 1vw;
+            padding: 2vw;
+            border-radius: 15px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .ninetySixCircularButton {
+            background-color: #3498db;
+            color: #fff;
+            width: 3vw;
+            height: 3vw;
+            font-size: 1vw;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.3s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .ninetySixCircularButton:hover {
+            background: #2670b8;
+        }
+
+        .ninetySixCircularButton.selected {
+            background-color: #d5bbf7;
+            color: #C37CDC;
+        }
+
+        #wellBackBtn {
+            width: 8vw;
+            height: 3vw;
+            background: rgb(253, 253, 253);
+            color: #070736;
+            border: none;
+            position: fixed;
+            top: 89%;
+            left: 40%;
+            transform: translateX(-50%);
+            padding: 1vw;
+            border-radius: 10px;
+            font-size: 1vw;
+            border: 1px solid #3574b3;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+            margin: 5px;
+            text-align: center;
+        }
+
+        #wellBackBtn:hover {
+            background: rgb(255, 123, 0);
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container96">
+        <div id="ninetySixButtonContainer"></div>
+        <button id="wellBackBtn" onclick="wellPrevious()">Previous</button>
+    </div>
+
+    <script>
+        // Function to generate Ninty-Six Well
+        function generate96WellButtons(numWells) {
+            const container = document.getElementById('ninetySixButtonContainer');
+            container.innerHTML = '';
+
+            for (let i = 1; i <= numWells; i++) {
+                const button = document.createElement('button');
+                button.className = 'ninetySixCircularButton';
+                button.innerHTML = `<span>${i}</span>`;
+                button.onclick = () => toggleWellButton(button);
+                container.appendChild(button);
+            }
+
+        }
+
+        // Function to toggle the selected state of a button
+        function toggleWellButton(button) {
+            button.classList.toggle('selected');
+            // Add logic for handling the selected button
+            console.log('Button clicked:', button.textContent);
+        }
+
+        // Call the function to generate buttons for 24 wells
+        generate96WellButtons(96);
+    </script>
+
+</body>
+
+</html>
+ -->

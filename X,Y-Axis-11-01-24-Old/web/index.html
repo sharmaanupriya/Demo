@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Variable Power Density Laser Exposer System</title>
+    <script src="/eel.js"></script>
+</head>
+
+<body>
+    <div id="welcomeOverlay" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <h1 class="system-name">Variable Power Density Laser Exposer System </h1>
+            <h1 class="system-name">(VPD-LES)</h1>
+            <a href="#"><img id="logo" src="images/logo.png" alt="Logo"></a>
+
+            <div class="cust-address">
+                <h2>Specialise Products Pvt Ltd.</h2>
+                <p>B 502, EKLVYA CHSL, PLOT 69 D/J/K, SECTOR 21, KHARGHAR, NAVI MUMBAI, MAHARASHTRA - 410210 INDIA </p>
+                <P>
+                    <img src="images/Call-light.png" alt="Call Icon" class="image-with-margin">+91 9323192750
+                    &nbsp;&nbsp;
+                    <img src="images/Email-light.png" alt="Email Icon"
+                        class="image-with-margin">mridulverma@specialiseproducts.com
+                </P>
+                <button id="toggleButton" onclick="toggleMode()" class="dark-light-icon">
+                    <img id="modeIcon" src="dark-mode-icon.png" alt="Dark Mode Icon">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create a hidden overlay for the second page -->
+    <div id="optionOverlay" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <div class="card">
+                <div class="title">Choose UI</div>
+                <div class="content">
+                    <input type="radio" name="rd" id="single">
+                    <input type="radio" name="rd" id="dual">
+                    <input type="radio" name="rd" id="triple">
+                    <label for="single" class="box first">
+                        <div class="plan">
+                            <span class="circle"></span>
+                            <span class="axisname">single axis</span>
+                            <span class="axisname">(Z)</span>
+                        </div>
+                    </label>
+                    <label for="dual" class="box second">
+                        <div class="plan">
+                            <span class="circle"></span>
+                            <span class="axisname">Dual axis</span>
+                            <span class="axisname">(X,Y)</span>
+                        </div>
+                    </label>
+                    <label for="triple" class="box third">
+                        <div class="plan">
+                            <span class="circle"></span>
+                            <span class="axisname">Triple axis</span>
+                            <span class="axisname">(x,y,z)</span>
+                        </div>
+                    </label>
+                    <button id="setaxisBtn" onclick="setAxis()" class="set-axis">Set</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create a hidden overlay for the second page -->
+    <div id="mainOverlay" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <div id="secondPage">
+                <button id="mainHomeBtn" onclick="mainHome()" class="home-icon">
+                    <img src="images/Home.png" alt="home Icon" />
+                    <span> Home Button </span>
+                </button>
+                <p id="goHome" style="display: none;">Machine is going to Home...</p>
+                <button id="mainSettingBtn" onclick="mainSetting()" class="setting-icon">
+                    <img src="images/Settings.png" alt="setting Icon" />
+                    <span> Setting </span>
+                </button>
+                <button id="mainTerminalBtn" onclick="mainTerminal()" class="terminal-icon">
+                    <img src="images/Terminal.png" alt="terminal Icon" />
+                    <span> Terminal</span>
+                </button>
+            </div>
+            <div><img src="images/logo.png" alt="logo" class="small-logo"></div>
+            <div class="wrapper" id="status">
+                <h2>Status</h2>
+                <textarea id="status_main" spellcheck="false" placeholder="..." readonly required></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create a hidden overlay for the setting Page-->
+    <div id="settingOverlay" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <div class="flex items-center justify-center gap-2 absolute align">
+                <button id="settingComBtn" onclick="settingCom()" class="comSetting-icon">COM
+                    Configuration</button>
+                <button id="settingMachineBtn" onclick="settingMachine()" class="machineParameter-icon">Machine
+                    Parameter</button>
+                <button id="settingUpdateBtn" onclick="showAuthenticationDialog()" class="softwareUpdate-icon">Software
+                    update</button>
+
+                <!-- Custom dialog box for authentication  -->
+                <div id="authentication" class="authentication-dialog" style="display: none;">
+                    <div class="authentication-content">
+                        <h1 id="softwareUpdateTitle">Software update</h1>
+                        <label for="password" class="pass-lbl">Enter Password:</label>
+                        <input type="password" id="authenticationPassword" maxlength="6" class="auth-pass-inp">
+                        <button onclick="checkPassword()"
+                            class="flex items-center justify-center gap-4 mt-8 submitbtn ">Submit</button>
+                        <p id="errorMessage" class="errormsg"></p>
+                        <span class="dialog-close-button" onclick="closeAuthentication()">&times;</span>
+                    </div>
+                </div>
+
+                <button id="settingCloseBtn" onclick="settingClose()" class="closeSettingButton">Close</button>
+            </div>
+            <div><img src="images/logo.png" alt="logo" class="small-logo"></div>
+            <div class="status_setting">
+                <h2>Status</h2>
+                <textarea id="status_setting" spellcheck="false" placeholder="..." readonly required></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create a hidden overlay for the COM setting page -->
+    <div id="comOverlay" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <h1 id="settingsTitle">COM Settings</h1>
+            <div id="comSettingPage">
+                <div class="setting-controls">
+                    <label for="comPortDropdown">Available COM Port:</label>
+                    <select id="comPortDropdown">
+                        <!-- Populate the COM port options dynamically if needed -->
+                        <!-- <option value="">Select COM Port</option> -->
+                        <!-- Additional options will be added dynamically here -->
+                    </select>
+                </div>
+                <div class="setting-controls">
+                    <label for="baudRateDropdown">Baud Rate:</label>
+                    <select id="baudRateDropdown">
+                        <!-- Populate the Baud Rate options dynamically if needed -->
+                        <!-- <option value="">Select Baud Rate</option> -->
+                        <!-- Additional options will be added dynamically here -->
+                    </select>
+                </div>
+                <div class="flex items-center justify-center gap-4 mt-8">
+                    <button id="comConnectBtn" onclick="comConnect()" class="button-tag">Connect</button>
+                    <button id="comRefreshBtn" onclick="comRefresh()" class="button-tag">Refresh</button>
+                    <button id="comCloseBtn" onclick="comClose()" class="button-tag">Close</button>
+                </div>
+            </div>
+            <div><img src="images/logo.png" alt="logo" class="small-logo"></div>
+            <div class="wrapper">
+                <h2>Status</h2>
+                <textarea id="status_com" spellcheck="false" placeholder="..." readonly required></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create a hidden overlay for the Machine Parameter page -->
+    <div id="machineOverlay" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <h1 id="machineParameterTitle">Machine Parameter</h1>
+            <div class="input-container-parameter">
+
+                <div class="setting-controls">
+                    <label class="mb-0" for="jobType">Job Type:</label>
+                    <select id="jobType">
+                        <option value="">Select Job Type</option>
+                        <option value="wellPlates">Well plates</option>
+                        <option value="petriDish">Petri Dish</option>
+                    </select>
+                    <button id="machineJobBtn" onclick="machineSetJob()" class="set-Job">Set</button>
+                </div>
+
+                <div class="setting-controls">
+                    <label class="mb-0" for="wellType">Well Type:</label>
+                    <select id="wellType">
+                        <option value="">Select Well Type</option>
+                        <option value="6Wells">6 wells</option>
+                        <option value="12Wells">12 wells</option>
+                        <option value="24Wells">24 wells</option>
+                        <option value="96Wells">96 wells</option>
+                    </select>
+                    <button id="machineWellBtn" onclick="machineSetWell()" class="set-Well">Set</button>
+                </div>
+
+                <div class="setting-controls">
+                    <label class="mb-0" for="timerType">Timer Type:</label>
+                    <select id="timerType">
+                        <!-- Populate the COM port options dynamically if needed -->
+                        <option value="">Select Timer</option>
+                        <option value="Uniform">Uniform</option>
+                        <option value="Individual">Individual</option>
+                        <!-- Additional options will be added dynamically here -->
+                    </select>
+                    <button id="machineTimerBtn" onclick="machineSetTimer()" class="set-Timer">Set</button>
+                </div>
+
+                <div class="setting-controls">
+                    <label class="mb-0" for="laserType">Laser Type:</label>
+                    <select id="laserType">
+                        <!-- Populate the COM port options dynamically if needed -->
+                        <option value="">Select Laser Type</option>
+                        <!-- Additional options will be added dynamically here -->
+                    </select>
+                    <button id="machineLaserBtn" onclick="machineSetLaser()" class="set-Laser">Set</button>
+                </div>
+
+                <button id="machineCloseBtn" class="flex items-ceter justify-center mt-9"
+                    onclick="machineClose()">Close</button>
+            </div>
+            <div><img src="images/logo.png" alt="logo" class="small-logo"></div>
+            <div class="wrapper">
+                <h2>Status</h2>
+                <textarea id="status_machine" spellcheck="false" placeholder="..." readonly required></textarea>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Create a hidden overlay for the Six Well page -->
+    <div id="container6">
+        <div id="sixButtonContainer"></div>
+        <div id="buttonContainer">
+            <button id="wellBackBtn" onclick="wellPrevious6()">Previous</button>
+            <button id="wellNextBtn" onclick="wellNext6()">Next</button>
+        </div>
+    </div>
+
+    <!-- Create a hidden overlay for the Twelve Well page -->
+    <div id="container12">
+        <div id="twelveButtonContainer"></div>
+        <div id="buttonContainer">
+            <button id="wellBackBtn" onclick="wellPrevious12()">Previous</button>
+            <button id="wellNextBtn" onclick="wellNext12()">Next</button>
+        </div>
+    </div>
+
+    <!-- Create a hidden overlay for the Twenty-Four Well page -->
+    <div id="container24">
+        <div id="twentyFourButtonContainer"></div>
+        <div id="buttonContainer">
+            <button id="wellBackBtn" onclick="wellPrevious24()">Previous</button>
+            <button id="wellNextBtn" onclick="wellNext24()">Next</button>
+        </div>
+    </div>
+        <!-- Create a hidden overlay for the Ninty-Six Well page -->
+        <div id="container96">
+            <div id="ninetySixButtonContainer"></div>
+            <div id="buttonContainer">
+                <button id="wellBackBtn" onclick="wellPrevious96()">Previous</button>
+                <button id="wellNextBtn" onclick="wellNext96()">Next</button>
+            </div>
+        </div>
+
+
+
+
+        <!-- Create a hidden overlay for the Machine Parameter page -->
+        <div id="machineOverlay" class="overlay" style="display: none;">
+            <div class="overlay-content">
+                <h1 id="machineParameterTitle">Machine Parameter</h1>
+                <div class="input-container-parameter">
+                    <label for="parameterInput">Max Z-Axis Travel:</label>
+                    <input type="text" id="parameterInput" name="machineParameter" maxlength="50"
+                        placeholder="Set Z-Axis" class="mmInputmaxlen">
+                    <p id="validationMessangeMaxLen"></p>
+                    <button id="machineZmaxBtn" onclick="machineSetZmax()" class="set-Parameter">Set</button>
+                    <div class="setting-controls">
+                        <label class="mb-0" for="laserType">Laser Type:</label>
+                        <select id="laserType">
+                            <!-- Populate the COM port options dynamically if needed -->
+                            <option value="">Select Laser Type</option>
+                            <!-- Additional options will be added dynamically here -->
+                        </select>
+                        <button id="machineLaserBtn" onclick="machineSetLaser()" class="set-Laser">Set</button>
+                    </div>
+                    <label for="diameterInput" class="mB-1rem fsize20">Set Default Focus:</label>
+                    <input type="text" id="diameterInput" name="diameterInput" placeholder="Set Default Focus"
+                        class="mmInputmaxlen">
+                    <div id="validationMessage"></div>
+                    <button id="machineDfocusBtn" onclick="machineSetDfocus()" class="set-DefaultFocus">Set</button>
+                    <button id="machineCloseBtn" class="flex items-ceter justify-center mt-9"
+                        onclick="machineClose()">Close</button>
+                </div>
+                <div><img src="images/logo.png" alt="logo" class="small-logo"></div>
+                <div class="wrapper">
+                    <h2>Status</h2>
+                    <textarea id="status_machine" spellcheck="false" placeholder="..." readonly required></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Create a hidden overlay for the Software update page -->
+        <div id="updateOverlay" class="overlay" style="display: none;">
+            <div class="overlay-content">
+                <h1 id="softwareUpdateTitle">Software update</h1>
+                <div class="input-container-Update">
+                    <label for="tokenInput">access Token:</label>
+                    <input type="text" id="tokenInput" name="access Token" maxlength="50" placeholder="access Token"
+                        class="mmInputToken">
+                    <p id=" "></p>
+
+                    <label for="passwordInput">Password:</label>
+                    <input type="text" id="passwordInput" name="Password" maxlength="10" placeholder="Password"
+                        class="mmInputpassword">
+                    <p id=" "></p>
+
+                    <button id="updateBtn" class="flex items-ceter justify-center mt-9"
+                        onclick="startUpdate()">Update</button>
+
+
+                    <button id="updateCloseBtn" class="flex items-ceter justify-center mt-9"
+                        onclick="updateClose()">Close</button>
+                </div>
+                <div><img src="images/logo.png" alt="logo" class="small-logo"></div>
+                <div class="wrapper">
+                    <h2>Status</h2>
+                    <textarea id="status" spellcheck="false" placeholder="..." readonly required></textarea>
+                </div>
+                <!-- Custom dialog box for downloading -->
+                <div id="downloadDialog" class="download-dialog" style="display: none;">
+                    <div class="download-content">
+                        <h1 id="downloadTitle">Downloading...</h1>
+                        <progress id="downloadProgress" value="0" max="100"></progress>
+                        <p id="downloadMessage" class="download-msg"></p>
+                        <button onclick="cancelDownload()"
+                            class="flex items-center justify-center gap-4 mt-8 cancelbtn">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Create a hidden overlay for the Terminal page -->
+        <div id="terminalOverlay" class="overlay" style="display: none;">
+            <div class="overlay-content">
+                <h1 id="terminalTitle">Terminal</h1>
+                <div id="terminal">
+                    <textarea id="data-display" readonly></textarea>
+                    <div>
+                        <input type="text" id="ack-input" placeholder="Enter Acknowledgment"
+                            class="mmInput custw-input mt-4">
+                    </div>
+                    <div class="flex items-ceter justify-center mt-9">
+                        <button class="sender-btn" id="terminalAckBtn" onclick="terminalAck()">Send
+                            Acknowledgment</button>
+                        <button class="cust-close" id="terminalCloseBtn" onclick="terminalClose()">Close</button>
+                    </div>
+                </div>
+                <div><img src="images/logo.png" alt="logo" class="small-logo"></div>
+                <div class="wrapper">
+                    <h2>Status</h2>
+                    <textarea id="status_terminal" spellcheck="false" placeholder="..." readonly required></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Create a hidden overlay for the third page -->
+        <div id="homeOverlay" class="overlay" style="display: none;">
+            <div class="overlay-content">
+                <div id="thirdPage">
+                    <h1 class="custom-h1-1">Homing Done</h1>
+                    <div class="input-container-currentP">
+                        <p class="text-white fsize25">Current Position: <span>0.0 mm</span></p>
+
+                        <div class="flex justify-center items-center mt-8 gap-2">
+                            <button id="homeBackBtn" class="back-button" onclick="homePrevious()">Previous</button>
+                            <button id="homeNextBtn" class="Next-button" onclick="homeNext()">Next</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div><img src="images/logo.png" alt="logo" class="small-logo"></div>
+                <div class="wrapper">
+                    <h2>Status</h2>
+                    <textarea id="status_home" spellcheck="false" placeholder="..." readonly required></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Create a hidden overlay for the Fourth page -->
+        <div id="indexOverlay" class="overlay">
+            <div class="overlay-content">
+                <h1 id="setaxisTitel">Set Job</h1>
+                <div class="container-indexing">
+                    <div class="circular-container">
+                        <button id="plusX-axis" class="plusX-axisbtn" onclick="plusXaxisBtn('X', '+')">+X</button>
+                        <button id="minusX-axis" class="minusX-axisbtn" onclick="minusXaxisBtn('X', '-')">-X</button>
+                        <button id="plusY-axis" class="plusY-axisbtn" onclick="plusYaxisBtn('Y', '+')">+Y</button>
+                        <button id="minusY-axis" class="minusY-axisbtn" onclick="minusYaxisBtn('Y', '-')">-Y</button>
+                    </div>
+
+                    <div class="input-container-axis">
+                        <label for="X-axis">X-axis:</label>
+                        <div class="input-axis-box">
+                            <input type="text" id="X-axis" name="X-axis" placeholder="X-axis" class="mmInputaxis"
+                                readonly>
+                        </div>
+
+                        <label for="Y-axis">Y-axis:</label>
+                        <div class="input-axis-box">
+                            <input type="text" id="Y-axis" name="Y-axis" placeholder="Y-axis" class="mmInputaxis"
+                                readonly>
+                        </div>
+
+                        <div class="radio-buttons-container">
+                            <label>
+                                <input type="radio" name="yOption" value="option1"> Option 1
+                            </label>
+                            <label>
+                                <input type="radio" name="yOption" value="option2"> Option 2
+                            </label>
+                            <label>
+                                <input type="radio" name="yOption" value="option3"> Option 3
+                            </label>
+                        </div>
+
+                        <div class="flex justify-center items-center mt-8 gap-2">
+                            <button id="X-axisBackBtn" class="axis-back-button"
+                                onclick="indexPrevious()">Previous</button>
+                            <button id="Y-axisNextBtn" class="axis-Next-button" onclick="indexNext()">Next</button>
+                        </div>
+                    </div>
+                    <h2 class="h4-align">(Please set laser Current manually)</h2>
+                    <button id="setAxisBtn" class="set-axis-btn" onclick="setFocus()">Set</button>
+                    <button id="focusLaserBtn" class="set-laser-btn" onclick="focusLaser()">Laser
+                        OFF</button>
+                </div>
+                <div><img src="images/logo.png" alt="logo" class="small-logo"></div>
+                <div class="wrapper">
+                    <h2>Status</h2>
+                    <textarea id="status_focus" spellcheck="false" placeholder="..." readonly required></textarea>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- code for dialog box -->
+        <div id="customDialogFocus" class="custom-dialog">
+            <div class="dialog-content">
+                <span class="dialog-close-button" onclick="closeCustomDialog()">&#215;</span>
+                <h2 class="dialog-title">Error</h2>
+                <p class="dialog-message">Please set the job.</p>
+                <button id="confirmDialog" class="dialog-confirm-button" onclick="closeCustomDialog()">OK</button>
+            </div>
+        </div>
+
+        <!--Create a Hidden overlay for the fifth page -->
+        <div id="paraOverlay" class="overlay" style="display: none;">
+            <div class="overlay-content">
+                <div id="fifthPage">
+                    <h1 id="setParameter">Set Parameters</h1>
+                    <div class="input-container-xy-para">
+                        <!-- Input container for Laser Spot Diameter -->
+                        <div class="input-containerlaser">
+                            <label for="diameterInput2" class="mB-1rem fsize20 label-with-space">Laser
+                                Spot Diameter
+                                (mm):</label>
+                            <div class="input-box">
+                                <input type="text" id="diameterInput2" onchange="onValuesEntered()"
+                                    name="diameterInput2" placeholder="Enter a decimal number (e.g., 12.34)"
+                                    class="mmInputDiameter">
+                                <div id="validationMessage2"></div>
+                            </div>
+                        </div>
+
+                        <!-- Input container for Laser Current -->
+                        <div class="input-containerlaserC">
+                            <label for="currentInput" class="mB-1rem fsize20">Laser Current (A):</label>
+                            <div class="input-box">
+                                <input type="text" id="currentInput" onchange="onValuesEntered()" name="currentInput"
+                                    placeholder="Enter a decimal number (e.g., 12.34)" class="mmInputcurrent">
+                                <div id="validationMessage3"></div>
+                            </div>
+                        </div>
+
+                        <!-- Input container for Laser Density -->
+                        <div class="input-containerlaserD">
+                            <label for="laserdensity" class="mB-1rem fsize20">Laser Density (W/cm²):
+                            </label>
+                            <div class="input-box">
+                                <input type="text" id="laserdensity" name="laserdensity" placeholder="Density"
+                                    class="mmInputDensity" readonly>
+                                <div id="validationMessage4"></div> <!-- Validation message element -->
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center items-center mt-10 gap-2 .left">
+                            <button id="paraBackBtn" class="back-button-setParameter"
+                                onclick="paraPrevious()">Previous</button>
+                            <button id="paraNextBtn" class="Next-button-setParameter" onclick="paraNext()">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <div><img src="images/logo.png" alt="logo" class="small-logo"></div>
+                <div class="wrapper">
+                    <h2>Status</h2>
+                    <textarea id="status_para" spellcheck="false" placeholder="..." readonly required></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Updated HTML for the dialog box -->
+        <div id="enterDialog" class="custom-dialog">
+            <div class="dialog-content">
+                <span class="dialog-close-button" onclick="showEnterDialog()">&#215;</span>
+                <h2 class="dialog-title">Input is not valid</h2>
+                <p class="dialog-message">Please correct the input & Press Enter Key On Laser Current
+                    And Object Height
+                    before proceeding</p>
+                <!-- <h2 class="dialog-title">Press Enter Key On Laser Current And Object Height</h2> -->
+                <button id="confirmDialog" class="dialog-confirm-button" onclick="closeEnterDialog()">OK</button>
+            </div>
+        </div>
+
+
+        <!-- Create a well Overlay -->
+        <div id="wellOverlay" class="overlay" style="display: none;">
+            <div class="overlay-content">
+
+                <!-- <button id="wellBackBtn" onclick="wellPrevious()">Previous</button> -->
+            </div>
+        </div>
+
+        <!-- Create a hidden overlay for the sixth page -->
+        <div id="exposureOverlay" class="overlay" style="display: none;">
+            <div class="overlay-content">
+                <h1 id="setTimer">Set Laser Exposer Time</h1>
+                <img src="images/Laser-exposer-img.png" alt="Laser-icon" class="laser-beam">
+                <div class="input-containertime">
+                    <!-- <label for="Input">Set Laser Exposer Time:</label> -->
+                    <div>
+                        <label for="hours" class="mB-1rem fsize20">Hours: </label>
+                        <div class="input-box">
+                            <input type="number" id="hours" min="0" value="0" class="mmInput2">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="minutes" class="mB-1rem fsize20">Minutes: </label>
+                        <div class="input-box">
+                            <input type="number" id="minutes" min="0" value="0" class="mmInput1">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="seconds" class="mB-1rem fsize20">Seconds: </label>
+                        <div class="input-box">
+                            <input type="number" id="seconds" min="0" value="0" class="mmInput1">
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center mt-9 gap-2">
+                        <button id="exposureBackBtn" class="back-button" onclick="exposurePrevious()">Previous</button>
+                        <button id="exposureNextBtn" class="Next-button" onclick="exposureNext()">Next</button>
+                    </div>
+                </div>
+                <div><img src="images/logo.png" alt="logo" class="small-logo"></div>
+                <div class="wrapper">
+                    <h2>Status</h2>
+                    <textarea id="status_exposure" spellcheck="false" placeholder="..." readonly required></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- code foe dialog box -->
+        <div id="customDialog" class="custom-dialog">
+            <div class="dialog-content">
+                <span class="dialog-close-button" onclick="closeCustomDialog()">&#215;</span>
+                <h2 class="dialog-title">Input is not valid</h2>
+                <p class="dialog-message">Please correct the input before proceeding.</p>
+                <button id="confirmDialog" class="dialog-confirm-button" onclick="closeCustomDialog()">OK</button>
+            </div>
+        </div>
+
+        <!-- Create a hidden overlay for the seventh page -->
+        <div id="timerOverlay" class="overlay" style="display: none;">
+            <div class="overlay-content">
+                <div id="sixthPage">
+                    <h1 id="timeTitle">Time</h1>
+                    <p id="countdownSeventh"></p>
+                    <button id="timerStartBtn" onclick="timerStart()" class="start-icon">
+                        <img src="images/Start.png" alt="restart Icon" />
+                        <span class="fsize25">Start</span>
+                    </button>
+                    <button id="timerPauseBtn" onclick="timerPause()" class="pause-icon">
+                        <img src="images/Pause.png" alt="Pause Icon" />
+                        <span class="fsize25">Pause</span>
+                    </button>
+                    <button id="timerResumeBtn" onclick="timerResume()" class="resume-icon" style="display: none;">
+                        <img src="images/Resume.png" alt="Resume Icon" />
+                        <span class="fsize25">Resume</span>
+                    </button>
+                    <button id="timerResetBtn" onclick="timerReset()" class="reset-icon">
+                        <img src="images/Reset.png" alt="restart Icon" />
+                        <span class="fsize25">Reset</span>
+                    </button>
+                    <button id="timerBackBtn" class="back-button" onclick="timerPrevious()">Previous</button>
+                    <button id="timerRestartBtn" class="restart-button" onclick="timerRestart()">Restart</button>
+                </div>
+
+                <!-- code for dialog box -->
+                <div id="customDialogSeventhPage" class="custom-dialog">
+                    <div class="dialog-content">
+                        <span class="dialog-close-button" onclick="closeCustomDialog()">&#215;</span>
+                        <h2 class="dialog-title2">Job Done</h2>
+                        <button id="confirmDialogSeventhPage" class="dialog-confirm-button"
+                            onclick="closeCustomDialog()">OK</button>
+                    </div>
+                </div>
+
+                <div><img src="images/logo.png" alt="logo" class="small-logo"></div>
+                <div class="wrapper">
+                    <h2>Status</h2>
+                    <textarea id="status_timer" spellcheck="false" placeholder="..." readonly required></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom dialog box exception message -->
+        <div id="exceptionMessage" class="custom-dialog">
+            <div class="dialog-content">
+                <span class="dialog-close-button" onclick="closeExceptionMessage()">&times;</span>
+                <h2 id="exceptionModalMessage" class="dialog-title">COM PORT IS DISCONNECTED</h2>
+            </div>
+        </div>
+        <!-- Custom dialog box for File Not Found message -->
+        <div id="fileNotFoundMessage" class="custom-dialog">
+            <div class="dialog-content">
+                <span class="dialog-close-button" onclick="closefileNotFoundMessage()">&times;</span>
+                <h2 id="fileNotFoundModalMessage" class="dialog-title">Machine is disconnected. Check
+                    the Hardware</h2>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+</body>
+
+</html>

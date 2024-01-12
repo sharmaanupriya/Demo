@@ -1,0 +1,5564 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+}
+
+#container {
+    text-align: center;
+}
+
+#logo {
+    width: 650px;
+    height: auto;
+    margin: 5px auto;
+}
+
+/* Add styles for dark mode */
+.dark-mode {
+    background-image: url('images/bg-image-dark.png');
+    /* Replace 'images/bg-image-dark.png' with the actual path to your image file */
+    background-size: cover;
+    background-position: center;
+}
+
+.dark-mode .overlay-content {
+    background-image: url('images/bg-image-dark.png');
+    /* Replace 'images/bg-image-dark.png' with the actual path to your image file */
+    background-size: cover;
+    background-position: center;
+}
+
+
+.dark-mode body {
+    font-family: Arial, sans-serif;
+}
+
+.dark-mode h2 {
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.dark-mode p {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.dark-mode p img {
+    margin-right: 0px;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    /* Align the image with the text vertically */
+}
+
+.dark-mode .image-with-margin {
+    margin-right: 0px;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin: 20;
+    /* Adjust the margin as needed */
+}
+
+.dark-mode .dark-light-icon {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.dark-mode .dark-light-icon:hover {
+    background: rgba(255, 255, 255, 0.4);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+/* Style the overlay container */
+.dark-mode .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+/* Style the content inside the overlay */
+.dark-mode .overlay-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    padding: 0px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Make the overlay match the size of the first page */
+.dark-mode .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+/* Apply the same styles to the input box as the third page */
+.dark-mode .mmInput {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    border-color: #007BFF;
+    color: #333;
+    transition: border-color 0.2s;
+}
+
+.dark-mode .mmInput:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.dark-mode .position-display {
+    bottom: 400px;
+    width: 50%;
+    padding: 20px;
+}
+
+.dark-mode .system-name {
+    font-size: 45px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    /* Change the font family */
+    background: linear-gradient(45deg, #155a87, #743f89);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -ms-background-clip: text;
+    color: transparent;
+    text-align: center;
+}
+
+/* Style the input containers */
+.dark-mode .input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    /* Add margin to space them out */
+}
+
+/* Apply the same styles to the input boxes as before */
+.dark-mode .mmInput {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    color: #333;
+    transition: border-color 0.2s;
+}
+
+.dark-mode .mmInput:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.dark-mode body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+/* .dark-mode .input-container {
+    background: linear-gradient(to bottom, #fff, rgb(224, 221, 221));
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+} */
+
+.dark-mode .input-container-currentP {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    height: 170px;
+    position: fixed;
+    top: 50%;
+    /* Center vertically at 50% of the viewport height */
+    left: 50%;
+    /* Center horizontally at 50% of the viewport width */
+    transform: translate(-50%, -50%);
+    /* Adjust to center the container */
+    font-size: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    /* Slightly larger and softer box shadow */
+    display: inline-block;
+    text-align: center;
+    /* Center the text horizontally */
+    color: #fff;
+    /* White text color for better readability */
+    width: 500px;
+    /* Set a fixed width to control the container's size */
+    display: inline-block;
+}
+
+.dark-mode .input-container-focus {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: fixed;
+    top: 40%;
+    /* Adjusted top position */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    text-align: left;
+    color: #ffffff;
+    width: 500px;
+}
+
+
+.dark-mode .mmInputf[readonly] {
+    background-color: #f4f4f4;
+    /* Change the background color for read-only input */
+    border-color: #ccc;
+    /* Change the border color for read-only input */
+    color: #666;
+    /* Change the text color for read-only input */
+    width: 100%;
+    /* Increase the width to make dropdowns more prominent */
+    padding: 12px;
+    /* Apply the same padding as buttons for consistency */
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    /* Increase border radius for a smoother appearance */
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    /* Increase the font size for better readability */
+    margin-top: 10px;
+
+}
+
+.dark-mode #focusTitel {
+    color: rgb(255, 123, 0);
+}
+
+.dark-mode .input-container {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    padding: 30px 5px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    color: #ffffff;
+    width: 60%;
+}
+
+/* Common styles for input boxes */
+/* .mmInputcurrent,
+.mmInputDiameter,
+.mmInputDensity,
+.mmInputHeight {
+    width: 100%; 
+    padding: 12px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+} */
+
+
+.dark-mode .mmInputDiameter {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.dark-mode .mmInputcurrent {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.dark-mode .mmInputDensity[readonly] {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 18%;
+}
+
+.dark-mode .mmInputHeight {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+
+.dark-mode .mmInputC[readonly] {
+    width: 90%;
+    /* Adjusted width for better visibility */
+    padding: 12px;
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    /* Align the input box to the left */
+
+}
+
+.dark-mode #setParameter {
+    color: rgb(255, 123, 0);
+}
+
+
+.dark-mode .input-containertime {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    width: 40%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    padding: 40px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: left;
+    color: #ffffff;
+}
+
+
+.dark-mode .mmInput1 {
+    width: 90%;
+    /* Adjusted width for better visibility */
+    padding: 8px;
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    /* Align the input box to the left */
+}
+
+.dark-mode .mmInput2 {
+    width: 90%;
+    /* Adjusted width for better visibility */
+    padding: 8px;
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    /* Align the input box to the left */
+}
+
+.dark-mode #setTimer {
+    color: rgb(255, 123, 0);
+}
+
+
+
+.dark-mode .input-box {
+    display: inline;
+}
+
+.dark-mode label {
+    margin-right: 10px;
+}
+
+.dark-mode .back-button {
+    width: 130px;
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: none;
+    /* position: fixed; */
+    /* top: 89%; */
+    left: 5%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid #3574b3;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    margin: 5px;
+    text-align: center;
+    /* Add margin to create space between buttons */
+}
+
+.dark-mode .back-button:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+.dark-mode .restart-button {
+    width: 130px;
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: none;
+    /* position: fixed; */
+    /* top: 89%; */
+    left: 5%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid #3574b3;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    margin: 5px;
+    text-align: center;
+    /* Add margin to create space between buttons */
+}
+
+
+
+.dark-mode button:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+.dark-mode .hidden {
+    display: none;
+}
+
+.dark-mode .Next-button {
+    width: 130px;
+    background: rgb(253, 253, 253);
+    color: #070736;
+    /* Set default text color to blue */
+    border: none;
+    /* position: fixed; */
+    top: 89%;
+    right: 5%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid #3574b3;
+    transition: background 0.3s, color 0.3s;
+    margin: 5px;
+    text-align: center;
+    /* Add margin to create space between buttons */
+}
+
+.dark-mode button:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+.dark-mode .hidden {
+    display: none;
+}
+
+.dark-mode .back-button-setParameter {
+    width: 130px;
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: none;
+    /* position: fixed; */
+    /* top: 89%; */
+    left: 25%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid #3574b3;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    margin: 5px;
+    text-align: center;
+    /* Add margin to create space between buttons */
+}
+
+.dark-mode .back-button-setParameter:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+.dark-mode .Next-button-setParameter {
+    width: 130px;
+    background: rgb(253, 253, 253);
+    color: #070736;
+    /* Set default text color to blue */
+    border: none;
+    position: fixed;
+    /* top: 89%; */
+    right: 15%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid #3574b3;
+    transition: background 0.3s, color 0.3s;
+    margin: 5px;
+    text-align: center;
+    /* Add margin to create space between buttons */
+}
+
+.dark-mode .Next-button-setParameter:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+
+.dark-mode #secondPage {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+    max-width: 80%;
+    margin: auto;
+    padding: 30px;
+    border-radius: 15px;
+    color: #ffffff;
+    font-family: "Arial", sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    top: 15%;
+    /* Adjust the percentage as needed */
+    height: 80vh;
+    /* Adjust as needed */
+    position: fixed;
+}
+
+.dark-mode .home-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 40px 40px;
+    border: none;
+    border-radius: 8px;
+    top: 40%;
+    left: 50%;
+    position: fixed;
+    margin: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.dark-mode .home-icon img {
+    width: 50px;
+    /* Adjust the width of the icon as needed */
+    height: 50px;
+    /* Adjust the height of the icon as needed */
+}
+
+.dark-mode .home-icon span {
+    margin-top: 20px;
+    /* Adjust the spacing between the icon and text */
+    text-align: center;
+    /* Center the text */
+}
+
+.dark-mode .home-icon:hover {
+    background: rgba(255, 255, 255, 0.4);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+.dark-mode .home-icon:hover img {
+    transform: scale(1.1);
+    content: url('images/Home-hover.png');
+    transition: transform 0.3s;
+}
+
+.dark-mode .setting-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 40px 70px;
+    border: none;
+    border-radius: 8px;
+    top: 40%;
+    left: 20%;
+    position: fixed;
+    margin: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.dark-mode .setting-icon img {
+    width: 50px;
+    /* Adjust the width of the icon as needed */
+    height: 50px;
+    /* Adjust the height of the icon as needed */
+}
+
+.dark-mode .setting-icon span {
+    margin-top: 20px;
+    /* Adjust the spacing between the icon and text */
+    text-align: center;
+    /* Center the text */
+}
+
+.dark-mode .setting-icon:hover {
+    background: rgba(255, 255, 255, 0.4);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+.dark-mode .setting-icon:hover img {
+    transform: scale(1.1);
+    content: url('images/Setting-hover.png');
+    transition: transform 0.3s;
+}
+
+.dark-mode .comSetting-icon {
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    /* padding: 40px 40px; */
+    border: none;
+    border-radius: 8px;
+    /* top: 45%;
+    left: 20%;
+    position: fixed; */
+    margin: 13px;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    transform: translateX(-50%, -50%);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.dark-mode .comSetting-icon:hover {
+    background: rgba(255, 255, 255, 0.4);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+.dark-mode .closeSettingButton {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    position: absolute;
+    /* bottom: -71px; */
+    left: 50%;
+    transform: translateX(-50%);
+    top: 135%;
+}
+
+.dark-mode .closeSettingButton:hover {
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+
+.dark-mode .machineParameter-icon {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* padding: 22px 32px; */
+    /* border: none; */
+    /* border-radius: 8px; */
+    /* top: 45%; */
+    /* left: 53%; */
+    /* position: fixed; */
+    /* margin: 13px; */
+    /* font-size: 20px; */
+    /* cursor: pointer; */
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    transform: translateX(-50%, -50%);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+
+}
+
+.dark-mode .machineParameter-icon:hover {
+    background: rgba(255, 255, 255, 0.4);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+.dark-mode .input-container-parameter {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    text-align: left;
+    color: #ffffff;
+    width: 520px;
+    height: 395px;
+}
+
+.dark-mode .set-Job {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    width: 66px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    transition: background 0.3s, color 0.3s;
+    display: inline-block;
+    /* Make the button inline */
+    position: fixed;
+    /* Set the position */
+    top: 83px;
+    /* Adjust the distance from the top */
+    right: 20px;
+    /* Adjust the distance from the left */
+    margin-bottom: 1rem;
+}
+
+
+.dark-mode .set-Job:hover {
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+.dark-mode .setting-controls select#jobType {
+    width: 90%;
+    /* Increase the width to make dropdowns more prominent */
+    height: 42px;
+    padding: 8px;
+    /* Apply the same padding as buttons for consistency */
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    /* Increase border radius for a smoother appearance */
+    /* font-family: "Arial", sans-serif; */
+    font-size: 20px;
+    /* Increase the font size for better readability */
+    margin-top: 10px;
+    /* color: #070736;*/
+    margin-bottom: 10px;
+}
+
+.dark-mode .setting-controls {
+    text-align: left;
+    margin-bottom: 15px;
+    /* Add some margin between setting controls */
+}
+
+
+
+.dark-mode .setting-controls select {
+    width: 60%;
+    padding: 12px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+
+.dark-mode .setting-controls select#laserType {
+    width: 90%;
+    /* Increase the width to make dropdowns more prominent */
+    height: 42px;
+    padding: 8px;
+    /* Apply the same padding as buttons for consistency */
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    /* Increase border radius for a smoother appearance */
+    /* font-family: "Arial", sans-serif; */
+    font-size: 20px;
+    /* Increase the font size for better readability */
+    margin-top: 10px;
+    /* color: #070736;*/
+    margin-bottom: 10px;
+}
+
+.dark-mode .setting-controls {
+    text-align: left;
+    margin-bottom: 15px;
+    /* Add some margin between setting controls */
+}
+
+
+
+.dark-mode .setting-controls select {
+    width: 60%;
+    padding: 12px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.dark-mode .setting-controls select#wellType{
+    width: 90%;
+    /* Increase the width to make dropdowns more prominent */
+    height: 42px;
+    padding: 8px;
+    /* Apply the same padding as buttons for consistency */
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    /* Increase border radius for a smoother appearance */
+    /* font-family: "Arial", sans-serif; */
+    font-size: 20px;
+    /* Increase the font size for better readability */
+    margin-top: 10px;
+    /* color: #070736;*/
+    margin-bottom: 10px;
+}
+
+.dark-mode .setting-controls {
+    text-align: left;
+    margin-bottom: 15px;
+    /* Add some margin between setting controls */
+}
+
+.dark-mode .setting-controls select#timerType{
+    width: 90%;
+    /* Increase the width to make dropdowns more prominent */
+    height: 42px;
+    padding: 8px;
+    /* Apply the same padding as buttons for consistency */
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    /* Increase border radius for a smoother appearance */
+    /* font-family: "Arial", sans-serif; */
+    font-size: 20px;
+    /* Increase the font size for better readability */
+    margin-top: 10px;
+    /* color: #070736;*/
+    margin-bottom: 10px;
+}
+
+.dark-mode .setting-controls {
+    text-align: left;
+    margin-bottom: 15px;
+    /* Add some margin between setting controls */
+}
+
+
+
+.dark-mode .setting-controls select {
+    width: 60%;
+    padding: 12px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.dark-mode .set-Well {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    width: 66px;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    transition: background 0.3s, color 0.3s;
+    display: inline-block;
+    /* Make the button inline */
+    position: fixed;
+    /* Set the position */
+    top: 184px;
+    /* Adjust the distance from the top */
+    right: 20px;
+    /* Adjust the distance from the left */
+}
+
+
+.dark-mode .set-Well:hover {
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+.dark-mode .set-Timer{
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    width: 66px;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    transition: background 0.3s, color 0.3s;
+    display: inline-block;
+    /* Make the button inline */
+    position: fixed;
+    /* Set the position */
+    top: 283px;
+    /* Adjust the distance from the top */
+    right: 20px;
+    /* Adjust the distance from the left */
+}
+
+.dark-mode .set-Timer:hover {
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+.dark-mode .set-Laser {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    width: 66px;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    transition: background 0.3s, color 0.3s;
+    display: inline-block;
+    /* Make the button inline */
+    position: fixed;
+    /* Set the position */
+    top: 383px;
+    /* Adjust the distance from the top */
+    right: 20px;
+    /* Adjust the distance from the left */
+}
+
+
+.dark-mode .set-Laser:hover {
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+
+.dark-mode #machineCloseBtn {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dark-mode #machineCloseBtn :hover {
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+.dark-mode .softwareUpdate-icon {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* padding: 22px 32px; */
+    /* border: none; */
+    /* border-radius: 8px; */
+    /* top: 45%; */
+    /* left: 53%; */
+    /* position: fixed; */
+    /* margin: 13px; */
+    /* font-size: 20px; */
+    /* cursor: pointer; */
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    transform: translateX(-50%, -50%);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+
+}
+
+.dark-mode .softwareUpdate-icon:hover {
+    background: rgba(255, 255, 255, 0.4);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+.dark-mode .input-container-Update {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    text-align: left;
+    color: #ffffff;
+    width: 520px;
+    height: 200px;
+}
+
+.dark-mode .mmInputToken {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    display: inline-block;
+    color: #000;
+    /* Make the input box inline */
+}
+
+.dark-mode .mmInputpassword {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    display: inline-block;
+    color: #000;
+    /* Make the input box inline */
+}
+
+.dark-mode #updateCloseBtn {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    position: absolute;
+    bottom: 0px;
+    left: 60%;
+    transform: translateX(-50%);
+}
+
+.dark-mode #updateCloseBtn :hover {
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+.dark-mode #updateBtn {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    position: absolute;
+    bottom: 0px;
+    left: 40%;
+    transform: translateX(-50%);
+}
+
+.dark-mode #updateBtn:hover {
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+.dark-mode #softwareUpdateTitle {
+    color: rgb(255, 123, 0);
+}
+
+
+.dark-mode .terminal-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 40px 40px;
+    top: 40%;
+    left: 80%;
+    position: fixed;
+    margin: 20px;
+    padding: 40px 60px;
+    border: none;
+    border-radius: 8px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    /* Center horizontally */
+    transform: translateX(-50%);
+}
+
+.dark-mode .terminal-icon img {
+    width: 50px;
+    /* Adjust the width of the icon as needed */
+    height: 50px;
+    /* Adjust the height of the icon as needed */
+}
+
+.dark-mode .terminal-icon span {
+    margin-top: 20px;
+    /* Adjust the spacing between the icon and text */
+    text-align: center;
+    /* Center the text */
+    /
+}
+
+.dark-mode .terminal-icon:hover {
+    background: rgba(255, 255, 255, 0.4);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+.dark-mode .terminal-icon:hover img {
+    transform: scale(1.1);
+    content: url('images/Terminal-hover.png');
+    transition: transform 0.3s;
+}
+
+.dark-mode .styled-button {
+    position: absolute;
+    top: 60px;
+}
+
+.dark-mode .start-icon {
+    width: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    position: fixed;
+    top: 60%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    padding: 17px 22px;
+    border-radius: 15px;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.dark-mode .start-icon img {
+    width: 50px;
+    height: 50px;
+    display: block;
+    /* Remove any extra space around the image */
+    margin: 0 auto;
+    /* Center the image horizontally */
+}
+
+.dark-mode .start-icon span {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.dark-mode .start-icon:hover {
+    background: rgba(255, 255, 255, 0.4);
+    color: rgb(255, 123, 0);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    outline: 2px solid #fff;
+}
+
+.dark-mode .pause-icon,
+.dark-mode .resume-icon {
+    width: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 17px 22px;
+    border-radius: 15px;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+
+.dark-mode .pause-icon img,
+.dark-mode .resume-icon img {
+    width: 50px;
+    height: 50px;
+    display: block;
+    /* Remove any extra space around the image */
+    margin: 0 auto;
+    /* Center the image horizontally */
+}
+
+.dark-mode .pause-icon span,
+.dark-mode .resume-icon span {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.dark-mode .pause-icon:hover,
+.dark-mode .resume-icon:hover {
+    background: rgba(255, 255, 255, 0.4);
+    color: rgb(255, 123, 0);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    outline: 2px solid #fff;
+}
+
+.dark-mode .pause-icon:hover img {
+    transform: scale(1.1);
+    content: url('images/Pause-hover.png');
+    /* Add transition property for smooth scaling */
+    transition: transform 0.3s;
+}
+
+.dark-mode .resume-icon:hover img {
+    transform: scale(1.1);
+    content: url('images/Resume-hover.png');
+    /* Add transition property for smooth scaling */
+    transition: transform 0.3s;
+}
+
+.dark-mode .reset-icon {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 60%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    padding: 17px 22px;
+    border-radius: 15px;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.dark-mode .reset-icon:hover {
+    background: rgba(255, 255, 255, 0.4);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+/* 
+.dark-mode .reset-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+.dark-mode .reset-icon img {
+    width: 50px;
+    /* Adjust the width of the icon as needed */
+    height: 50px;
+    /* Adjust the height of the icon as needed */
+}
+
+.dark-mode .reset-icon span {
+    margin-top: 15px;
+    /* Adjust the spacing between the icon and text */
+    text-align: center;
+    /* Center the text */
+}
+
+.dark-mode .set-focus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Center content vertically */
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: fixed;
+    top: 70%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    padding: 18px 25px;
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.dark-mode .set-focus:hover {
+    background: rgba(255, 255, 255, 0.4);
+    color: rgb(255, 123, 0);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    outline: 2px solid #fff;
+}
+
+.dark-mode .set-laser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Center content vertically */
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: fixed;
+    top: 70%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    padding: 18px 25px;
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.dark-mode .set-laser:hover {
+    background: rgba(255, 255, 255, 0.4);
+    color: rgb(255, 123, 0);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    outline: 2px solid #fff;
+}
+
+.dark-mode #goHome {
+    position: absolute;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    /* Smaller font size */
+    background-color: #2e8b57;
+    /* Green background */
+    color: #fff;
+    /* White text color */
+    padding: 10px 15px;
+    /* Slightly smaller padding */
+    border-radius: 10px;
+    /* Rounded corners */
+    text-align: center;
+    /* Center-align text */
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    /* Add a shadow */
+}
+
+.dark-mode .custom-h1-1 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    background-color: #2e8b57;
+    color: #fff;
+    padding: 19px 28px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 4px 3px 5px 0px rgba(2, 1, 1, 0.75);
+}
+
+
+
+.dark-mode .custom-h1-2 {
+    position: absolute;
+    top: 20%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    /* Adjust the font size */
+    background-color: #2e8b57;
+    color: #fff;
+    padding: 5px 10px;
+    /* Adjust padding */
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+
+.dark-mode #countdownSeventh {
+    font-size: 100px;
+    position: fixed;
+    top: 20%;
+    /* Center vertically at 50% of the viewport height */
+    left: 50%;
+    /* Center horizontally at 50% of the viewport width */
+    transform: translate(-50%, -50%);
+    /* Adjust to center the element */
+    color: rgb(255, 123, 0);
+}
+
+.dark-mode #timeTitle {
+    color: rgb(255, 123, 0);
+}
+
+
+/* Dialog box */
+.dark-mode .custom-dialog {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.dark-mode .dialog-content {
+    background: rgba(255, 255, 255, 0.151);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 5px;
+    color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark-mode .dialog-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgba(41, 40, 40, 0.459)
+        /* Close button color */
+}
+
+.dark-mode .dialog-close-button:hover {
+    color: #000;
+    /* Close button color on hover */
+}
+
+.dark-mode .dialog-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ff0000;
+}
+
+.dark-mode .dialog-title2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.dark-mode .dialog-message {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+    /* Add this to center the text horizontally */
+}
+
+.dark-mode .dialog-confirm-button {
+    padding: 10px 20px;
+    color: rgb(255, 123, 0);
+    color: #070736;
+    border: 1px solid #3574b3;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dark-mode .dialog-confirm-button:focus {
+    outline: none;
+}
+
+.dark-mode #settingOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent background overlay */
+    z-index: 999;
+    /* Ensure it's above other content */
+}
+
+
+
+.dark-mode #comOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent background overlay */
+    z-index: 999;
+    /* Ensure it's above other content */
+}
+
+.dark-mode #comSettingPage {
+    margin: auto;
+    background: rgba(255, 255, 255, 0.25);
+    /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 50%;
+    margin-top: 6rem;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    font-family: "Arial", sans-serif;
+}
+
+.dark-mode #settingsTitle {
+    color: rgb(255, 123, 0);
+}
+
+.dark-mode #machineParameterTitle {
+    color: rgb(255, 123, 0);
+}
+
+.dark-mode .setting-controls select#comPortDropdown,
+.dark-mode .setting-controls select#baudRateDropdown {
+    width: 100%;
+    /* Increase the width to make dropdowns more prominent */
+    padding: 12px;
+    /* Apply the same padding as buttons for consistency */
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    /* Increase border radius for a smoother appearance */
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    /* Increase the font size for better readability */
+    margin-top: 10px;
+}
+
+.dark-mode .setting-controls {
+    text-align: left;
+    margin-bottom: 15px;
+    /* Add some margin between setting controls */
+}
+
+.dark-mode .setting-controls label {
+    display: block;
+    width: auto;
+    /* Set width to auto for dynamic width based on content */
+    text-align: left;
+    /* Align the text to the left within the label */
+    margin-bottom: 5px;
+    font-size: 20px;
+    /* Adjust the font size as needed */
+}
+
+
+.dark-mode .setting-controls select {
+    width: 60%;
+    padding: 12px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.dark-mode select,
+button {
+    padding: 12px;
+    /* Add a different border color for buttons and select elements */
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 22px;
+    /* Increase the font size for better readability */
+    margin-top: 20px;
+    /* Add more margin to the top of buttons to create space between dropdowns and buttons */
+}
+
+.dark-mode button {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    padding: 14px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    margin: 10px;
+}
+
+.dark-mode button:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+.dark-mode #data-display {
+    width: 100%;
+    height: 250px;
+    overflow: auto;
+    border: 1px solid #ccc;
+}
+
+.dark-mode #terminal {
+    background: rgba(255, 255, 255, 0.25);
+    /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    font-family: "Arial", sans-serif;
+}
+
+.dark-mode #terminalTitle {
+    color: rgb(255, 123, 0);
+}
+
+
+.dark-mode .mt-4 {
+    margin-top: 1rem;
+}
+
+.dark-mode .text-white {
+    color: #fff;
+}
+
+.dark-mode .flex {
+    display: flex;
+}
+
+.dark-mode .justify-center {
+    justify-content: center;
+}
+
+.dark-mode .items-center {
+    align-items: center;
+}
+
+.dark-mode .gap-2 {
+    gap: 0.5rem;
+}
+
+.dark-mode .mt-8 {
+    margin-top: 2rem;
+}
+
+.dark-mode .mt-9 {
+    margin-top: 1rem;
+}
+
+.dark-mode .mt-10 {
+    margin-top: 0rem;
+}
+
+.dark-mode .fsize20 {
+    font-size: 20px;
+}
+
+.dark-mode .fsize25 {
+    font-size: 25px;
+}
+
+.dark-mode .mB-1rem {
+    margin-bottom: 1rem;
+}
+
+.dark-mode .setting-container {
+    max-width: 80%;
+    margin: 10%;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.dark-mode .absolute {
+    position: absolute;
+}
+
+.dark-mode .relative {
+    position: relative;
+}
+
+.dark-mode .w-full {
+    width: 100%;
+}
+
+.dark-mode .h-full {
+    height: 100%;
+}
+
+.dark-mode .align {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dark-mode .button-tag {
+    padding: 10px 14px !important;
+    font-size: 18px;
+    margin: 0px !important;
+}
+
+.dark-mode .gap-4 {
+    gap: 1rem;
+}
+
+.dark-mode .mb-0 {
+    margin-bottom: 0px !important;
+}
+
+.dark-mode .cust-close {
+    font-size: 18px !important;
+    padding: 10px 20px !important;
+}
+
+.dark-mode .sender-btn {
+    font-size: 15px !important;
+    padding: 5px 20px !important;
+}
+
+.dark-mode .custw-input {
+    width: 380px !important;
+}
+
+.dark-mode .cust-address {
+    position: absolute;
+    bottom: 13px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.dark-mode ::selection {
+    color: #fff;
+    background: #4671EA;
+}
+
+.dark-mode body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.dark-mode .wrapper {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100px;
+    width: 607px;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.06);
+    text-align: center;
+}
+
+.dark-mode .wrapper h2 {
+    color: #fdfdfd;
+    font-size: 18px;
+}
+
+/* 
+.dark-mode h2 {
+    color: rgb(7, 7, 63);
+    margin-top: 0;
+    margin-bottom: 10px;
+} */
+
+.dark-mode textarea {
+    resize: none;
+    /* Optional: disable textarea resizing */
+    overflow: hidden;
+    /* Optional: hide scrollbar */
+}
+
+
+.dark-mode .wrapper textarea {
+    width: calc(100% - 20px);
+    resize: none;
+    height: calc(50%);
+    outline: none;
+    padding: 1px;
+    font-size: 14px;
+    margin-top: 4px;
+    border-radius: 5px;
+    max-height: 268px;
+    caret-color: #4671EA;
+    border: 1px solid #bfbfbf;
+}
+
+.dark-mode textarea::placeholder {
+    color: #b3b3b3;
+}
+
+.dark-mode .status_setting {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 145px;
+    width: 337px;
+    /* background: #fff; */
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    /* background: #070736; */
+}
+
+.dark-mode .status_setting h2 {
+    color: #fff;
+    font-size: 18px;
+}
+
+/* .dark-mode h2 {
+     color: rgb(7, 7, 63);
+     margin-top: 0;
+     margin-bottom: 10px;
+ } */
+
+.dark-mode textarea {
+    resize: none;
+    /* Optional: disable textarea resizing */
+    overflow: hidden;
+    /* Optional: hide scrollbar */
+}
+
+
+.dark-mode .status_setting textarea {
+    width: calc(100% - 20px);
+    resize: none;
+    height: 94px;
+    outline: none;
+    padding: 1px;
+    font-size: 14px;
+    margin-top: 4px;
+    border-radius: 5px;
+    max-height: 268px;
+    caret-color: #4671EA;
+    border: 1px solid #bfbfbf;
+}
+
+.dark-mode textarea::placeholder {
+    color: #b3b3b3;
+}
+
+.dark-mode textarea:is(:focus, :valid) {
+    padding: 9px;
+    /* Adjust padding as needed */
+    border: 2px solid #4671EA;
+}
+
+.dark-mode textarea::-webkit-scrollbar {
+    width: 0px;
+}
+
+
+.dark-mode.small-logo {
+    width: 190px;
+    height: 85px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 20px;
+    margin-right: 40px;
+}
+
+.dark-mode .h4-align {
+    color: red;
+    position: absolute;
+    top: -68px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+}
+
+
+.dark-mode .authentication-dialog {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark-mode .authentication-content {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(0px);
+    width: 350px;
+    margin: 100px auto;
+    height: 200px;
+    padding: 14px;
+    border-radius: 8px;
+    color: #000000;
+    position: relative;
+    bottom: 7%;
+}
+
+.dark-mode .auth-pass-inp{
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    border-color: #007BFF;
+    color: #333;
+    transition: border-color 0.2s;
+}
+
+.dark-mode .timer-inp{
+    width: 50%;
+    margin-top: 20px;
+    position: relative;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    border-color: #007BFF;
+    color: #333;
+    transition: border-color 0.2s;
+}
+
+.dark-mode .errormsg{
+    color: red;
+    position: relative;
+    left: -2%;
+    bottom: 18%;
+}
+
+.dark-mode .submitbtn {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    margin: 30px;
+    font-family: "Arial", sans-serif;
+    font-size: 15px;
+    position: relative;
+    top: -5%;
+    left: 30%;
+}
+
+.dark-mode .submitbtn:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+
+.dark-mode .settimerbtn {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 0px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    margin-top: 15px;
+    font-family: "Arial", sans-serif;
+    font-size: 15px;
+    position: relative;
+    left: 35%;
+}
+
+.dark-mode .settimerbtn:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+.dark-mode .pass-lbl{
+    color: white;
+    font-size: 18px;
+}
+
+.dark-mode .timer-lbl{
+    color: white;
+    font-size: 18px;
+}
+
+.dark-mode .download-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark-mode .download-content {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(0px);
+    padding: 55px;
+    border-radius: 8px;
+    text-align: center;
+    position: fixed;
+    left: 37%;
+    top: 24%;
+    height: 190px;
+}
+
+.dark-mode #downloadProgress {
+    width: 100%;
+    height: 50px;
+}
+
+.dark-mode .cancelbtn {
+    background-color: #ccc;
+    color: #333;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    top: 0%;
+    left: 20%;
+}
+
+.dark-mode .cancelbtn:hover {
+    background-color: #ddd;
+}
+
+
+.dark-mode .card{
+    max-width: 350px;
+    width: 100%;
+    height: 35%;
+    margin: 170px auto;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 5px;
+    padding: 60px;
+    padding-bottom: 105px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  }
+  .dark-mode .card .title{
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .dark-mode .card .content{
+    margin-top: 20px;
+  }
+  .dark-mode .card  label.box{
+    background: #ffffff;
+    margin-top: 30px;
+    padding: 22px 12px;
+    display: flex;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .axisname{
+    font-size: 18px;
+    margin-right: 10px;
+  }
+
+  .dark-mode #single:checked ~ label.first,
+  .dark-mode  #dual:checked ~ label.second,
+  .dark-mode #triple:checked ~ label.third{
+    border-color: #8E49E8;
+    background: #d5bbf7;
+  }
+  .dark-mode .card  label.box:hover{
+    background: #d5bbf7;
+  }
+  .dark-mode .card  label.box .circle{
+    height: 22px;
+    width: 22px;
+    background: #ccc;
+    border: 5px solid transparent;
+    display: inline-block;
+    margin-right: 15px;
+    border-radius: 50%;
+    transition: all 0.25s ease;
+    box-shadow: inset -4px -4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .dark-mode  #single:checked ~ label.first .circle,
+  .dark-mode #dual:checked ~ label.second .circle,
+  .dark-mode  #triple:checked ~ label.third .circle{
+    border-color: #8E49E8;
+    background: #fff;
+  }
+  .dark-mode .card  label.box .plan{
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+  .dark-mode .card input[type="radio"]{
+    display: none;
+  }
+
+  .dark-mode .title{
+    color: white;
+  }
+
+  .dark-mode .set-axis {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    width: 80px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 25px;
+    transition: background 0.3s, color 0.3s;
+    display: inline-block;
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dark-mode .set-axis:hover {
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+
+.dark-mode #twelveButtonContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 215px;
+    border: 5px solid #3498db;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 5px;
+    padding: 72px;
+    padding-left: 0px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .circularButton {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    color: #fff;
+    width: calc(21.333% - 12px);
+    height: 40px;
+    padding-bottom: calc(18.333% - 17px);
+    font-size: 20px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    position: relative;
+    bottom: 20%;
+    left: 8%;
+}
+
+.dark-mode .circularButton:hover{
+    background: rgba(255, 255, 255, 0.4);
+    /* background: #fff; */
+}
+
+
+
+.dark-mode .circularButton span {
+    position: absolute;
+    top: 40%;
+    color: rgb(255, 255, 255);
+}
+
+.dark-mode .circularButton.selected {
+    background-color: #e4e6ee;
+}
+
+.dark-mode .letterA {
+    position: absolute;
+    left: -23px;
+    top: 55%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.dark-mode .letterB {
+    position: absolute;
+    left: -138px;
+    top: 195%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.dark-mode .letterC {
+    position: absolute;
+    right: 395%;
+    top: 330%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.dark-mode .number {
+    position: absolute;
+    left: 31px;
+    top: -22%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.dark-mode #twelveWellTitle{
+    color: rgb(255, 123, 0);
+}
+
+.dark-mode #twelveWellCloseBtn{
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    padding: 14px;
+    /* margin-top: 20px; */
+    position: fixed;
+    top: 75%;
+    left: 47%;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    margin: 10px;
+}
+
+.dark-mode #twelveWellCloseBtn:hover{
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+
+
+
+/*start light mode */
+
+body {
+    background-image: url('images/bg-image-light.png');
+    background-size: 100% 100%;
+    /* You can try using 100% 100% to stretch the image to cover the entire background */
+    background-position: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.overlay-content {
+    background-image: url('images/bg-image-light.png');
+    background-size: contain;
+    /* You can try contain to ensure the entire image is visible without cropping */
+    background-position: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    color: rgb(7, 7, 63);
+    margin-bottom: 5px;
+}
+
+p {
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+p img {
+    margin-right: 0px;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    /* Align the image with the text vertically */
+}
+
+.image-with-margin {
+    margin-right: 0px;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin: 20;
+    /* Align the image with the text vertically */
+}
+
+
+.dark-light-icon {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.dark-light-icon:hover {
+    background: rgba(255, 255, 255, 0.4);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+
+/* Style the overlay container */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+/* Style the content inside the overlay */
+.overlay-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+
+    text-align: center;
+}
+
+/* Make the overlay match the size of the first page */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+/* Apply the same styles to the input box as the third page */
+.mmInput {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    color: #333;
+    transition: border-color 0.2s;
+}
+
+.mmInput:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.position-display {
+    bottom: 400px;
+    width: 50%;
+    padding: 20px;
+}
+
+.system-name {
+    font-size: 45px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    /* Change the font family */
+    background: linear-gradient(45deg, #155a87, #743f89);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -ms-background-clip: text;
+    color: transparent;
+    text-align: center;
+
+}
+
+/* Style the input containers */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    /* Add margin to space them out */
+}
+
+/* Apply the same styles to the input boxes as before */
+.mmInput {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    border-color: #007BFF;
+    color: #333;
+    transition: border-color 0.2s;
+}
+
+.mmInput:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+/* .input-container {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+} */
+
+.input-container-currentP {
+    height: 170px;
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 50%;
+    /* Center vertically at 50% of the viewport height */
+    left: 50%;
+    /* Center horizontally at 50% of the viewport width */
+    transform: translate(-50%, -50%);
+    /* Adjust to center the container */
+    font-size: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    /* Slightly larger and softer box shadow */
+    display: inline-block;
+    text-align: center;
+    /* Center the text horizontally */
+    color: #ffffff;
+    /* White text color for better readability */
+    width: 500px;
+    /* Set a fixed width to control the container's size */
+    display: inline-block;
+}
+
+.input-container-focus {
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 40%;
+    /* Adjusted top position */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    text-align: left;
+    color: #ffffff;
+    width: 500px;
+}
+
+.mmInputf[readonly] {
+    background-color: #f4f4f4;
+    /* Change the background color for read-only input */
+    border-color: #ccc;
+    /* Change the border color for read-only input */
+    color: #666;
+    /* Change the text color for read-only input */
+    width: 100%;
+    /* Increase the width to make dropdowns more prominent */
+    padding: 12px;
+    /* Apply the same padding as buttons for consistency */
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    /* Increase border radius for a smoother appearance */
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    /* Increase the font size for better readability */
+    margin-top: 10px;
+
+}
+
+#focusTitel {
+    color: #070736;
+}
+
+
+/* Common styles for input boxes */
+/* .mmInputcurrent,
+.mmInputDiameter,
+.mmInputDensity,
+.mmInputHeight {
+    width: 100%; 
+    padding: 12px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+} */
+
+
+.input-containerlaser,
+.input-containerlaserC,
+.input-containerlaserD,
+.input-containerheight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align input boxes to the left */
+}
+
+.input-containerlaser label,
+.input-containerlaserC label,
+.input-containerlaserD label,
+.input-containerheight label {
+    width: 80%; /* Set label width to match input box width */
+    display: block;
+    text-align: left;
+    margin-bottom: 5px; /* Adjust the margin as needed */
+}
+
+.mmInputDiameter,
+.mmInputcurrent,
+.mmInputDensity[readonly],
+.mmInputHeight {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Additional styles to adjust the layout of the input containers */
+.input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align input boxes to the left */
+    
+}
+
+.input-container-xy-para {
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    width: 30%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    padding: 30px 35px;
+    border-radius: 10px;
+    gap: 10px;
+    color: #ffffff;
+}
+
+.mmInputDiameter,
+.mmInputcurrent,
+.mmInputDensity[readonly],
+.mmInputHeight {
+    width: 230%; /* Adjust the width as needed */
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+
+.mmInputC[readonly] {
+    width: 90%;
+    /* Adjusted width for better visibility */
+    padding: 12px;
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    /* Align the input box to the left */
+
+}
+
+#setParameter {
+    color: #070736;
+}
+
+
+.input-containertime {
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    width: 35%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    padding: 40px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: left;
+    color: #ffffff;
+    padding-right: 0px;
+}
+
+
+.mmInput1 {
+    width: 90%;
+    /* Adjusted width for better visibility */
+    padding: 8px;
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    /* Align the input box to the left */
+}
+
+.mmInput2 {
+    width: 90%;
+    /* Adjusted width for better visibility */
+    padding: 8px;
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    /* Align the input box to the left */
+}
+
+#setTimer {
+    color: #070736;
+}
+
+
+
+.input-box {
+    display: inline;
+}
+
+label {
+    margin-right: 10px;
+}
+
+.back-button {
+    width: 130px;
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: none;
+    /* position: fixed; */
+    /* top: 89%; */
+    left: 5%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid #3574b3;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    margin: 5px;
+    text-align: center;
+    /* Add margin to create space between buttons */
+}
+
+.back-button:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+.back-button-setParameter {
+    width: 130px;
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: none;
+    /* position: fixed; */
+    top: 84%;
+    left: 25%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid #3574b3;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    margin: 5px;
+    text-align: center;
+}
+
+.back-button-setParameter:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+.Next-button-setParameter {
+    width: 130px;
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: none;
+    /* position: fixed; */
+    top: 84%;
+    right: 27%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid #3574b3;
+    transition: background 0.3s, color 0.3s;
+    margin: 5px;
+    text-align: center;
+}
+
+.Next-button-setParameter:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+
+
+.restart-button {
+    width: 130px;
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: none;
+    /* position: fixed; */
+    /* top: 89%; */
+    left: 5%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid #3574b3;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    margin: 5px;
+    text-align: center;
+    /* Add margin to create space between buttons */
+}
+
+
+
+button:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+.hidden {
+    display: none;
+}
+
+.Next-button {
+    width: 130px;
+    background: rgb(253, 253, 253);
+    color: #070736;
+    /* Set default text color to blue */
+    border: none;
+    /* position: fixed; */
+    top: 89%;
+    right: 5%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid #3574b3;
+    transition: background 0.3s, color 0.3s;
+    margin: 5px;
+    text-align: center;
+    /* Add margin to create space between buttons */
+}
+
+button:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+.hidden {
+    display: none;
+}
+
+#secondPage {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+    max-width: 80%;
+    margin: auto;
+    padding: 30px;
+    border-radius: 15px;
+    color: #ffffff;
+    font-family: "Arial", sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    top: 15%;
+    /* Adjust the percentage as needed */
+    height: 80vh;
+    /* Adjust as needed */
+    position: fixed;
+}
+
+.home-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px 40px;
+    border: none;
+    border-radius: 8px;
+    top: 40%;
+    left: 50%;
+    position: fixed;
+    margin: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.home-icon img {
+    width: 50px;
+    /* Adjust the width of the icon as needed */
+    height: 50px;
+    /* Adjust the height of the icon as needed */
+}
+
+.home-icon span {
+    margin-top: 20px;
+    /* Adjust the spacing between the icon and text */
+    text-align: center;
+    /* Center the text */
+}
+
+.home-icon:hover {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+.home-icon:hover img {
+    transform: scale(1.1);
+    content: url('images/Home-hover-light.png');
+    transition: transform 0.3s;
+}
+
+.setting-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px 70px;
+    border: none;
+    border-radius: 8px;
+    top: 40%;
+    left: 20%;
+    position: fixed;
+    margin: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.setting-icon img {
+    width: 50px;
+    /* Adjust the width of the icon as needed */
+    height: 50px;
+    /* Adjust the height of the icon as needed */
+}
+
+.setting-icon span {
+    margin-top: 20px;
+    /* Adjust the spacing between the icon and text */
+    text-align: center;
+    /* Center the text */
+}
+
+.setting-icon:hover {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+.setting-icon:hover img {
+    transform: scale(1.1);
+    content: url('images/Setting-hover-light.png');
+    transition: transform 0.3s;
+}
+
+.terminal-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px 40px;
+    top: 40%;
+    left: 80%;
+    position: fixed;
+    margin: 20px;
+    padding: 40px 60px;
+    border: none;
+    border-radius: 8px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    /* Center horizontally */
+    transform: translateX(-50%);
+}
+
+.terminal-icon img {
+    width: 50px;
+    /* Adjust the width of the icon as needed */
+    height: 50px;
+    /* Adjust the height of the icon as needed */
+}
+
+.terminal-icon span {
+    margin-top: 20px;
+    /* Adjust the spacing between the icon and text */
+    text-align: center;
+    /* Center the text */
+}
+
+.terminal-icon:hover {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+.terminal-icon:hover img {
+    transform: scale(1.1);
+    content: url('images/Terminal-hover-light.png');
+    transition: transform 0.3s;
+}
+
+
+.comSetting-icon {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* padding: 22px 32px; */
+    border: none;
+    border-radius: 8px;
+    /* top: 45%; */
+    /* left: 30%; */
+    /* position: fixed; */
+    margin: 13px;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    transform: translateX(-50%, -50%);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.comSetting-icon:hover {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+.closeSettingButton {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    position: absolute;
+    /* bottom: -71px; */
+    left: 50%;
+    transform: translateX(-50%);
+    top: 135%;
+}
+
+.closeSettingButton:hover {
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+.machineParameter-icon {
+    display: flex;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* padding: 22px 32px; */
+    /* border: none; */
+    /* border-radius: 8px; */
+    /* top: 45%; */
+    /* left: 53%; */
+    /* position: fixed; */
+    /* margin: 13px; */
+    /* font-size: 20px; */
+    /* cursor: pointer; */
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    transform: translateX(-50%, -50%);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+
+}
+
+.machineParameter-icon:hover {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+.input-container-parameter {
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    text-align: left;
+    color: #ffffff;
+    width: 520px;
+    height: 395px;
+}
+
+.set-Job {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    width: 66px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    transition: background 0.3s, color 0.3s;
+    display: inline-block;
+    /* Make the button inline */
+    position: fixed;
+    /* Set the position */
+    top: 83px;
+    /* Adjust the distance from the top */
+    right: 20px;
+    /* Adjust the distance from the left */
+    margin-bottom: 1rem;
+}
+
+.set-Job:hover {
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+.setting-controls select#jobType {
+    width: 90%;
+    /* Increase the width to make dropdowns more prominent */
+    height: 42px;
+    padding: 8px;
+    /* Apply the same padding as buttons for consistency */
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    /* Increase border radius for a smoother appearance */
+    /* font-family: "Arial", sans-serif; */
+    font-size: 20px;
+    /* Increase the font size for better readability */
+    margin-top: 10px;
+    /* color: #070736;*/
+    margin-bottom: 10px;
+}
+
+.setting-controls {
+    text-align: left;
+    margin-bottom: 15px;
+    /* Add some margin between setting controls */
+}
+
+
+
+.setting-controls select {
+    width: 60%;
+    padding: 12px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+
+.setting-controls select#laserType {
+    width: 90%;
+    /* Increase the width to make dropdowns more prominent */
+    height: 42px;
+    padding: 8px;
+    /* Apply the same padding as buttons for consistency */
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    /* Increase border radius for a smoother appearance */
+    /* font-family: "Arial", sans-serif; */
+    font-size: 20px;
+    /* Increase the font size for better readability */
+    margin-top: 10px;
+    /* color: #070736;*/
+    margin-bottom: 10px;
+}
+
+.setting-controls {
+    text-align: left;
+    margin-bottom: 15px;
+    /* Add some margin between setting controls */
+}
+
+.setting-controls select#timerType{
+    width: 90%;
+    /* Increase the width to make dropdowns more prominent */
+    height: 42px;
+    padding: 8px;
+    /* Apply the same padding as buttons for consistency */
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    /* Increase border radius for a smoother appearance */
+    /* font-family: "Arial", sans-serif; */
+    font-size: 20px;
+    /* Increase the font size for better readability */
+    margin-top: 10px;
+    /* color: #070736;*/
+    margin-bottom: 10px;
+}
+
+.setting-controls {
+    text-align: left;
+    margin-bottom: 15px;
+    /* Add some margin between setting controls */
+}
+
+
+
+.setting-controls select {
+    width: 60%;
+    padding: 12px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.setting-controls select#wellType{
+    width: 90%;
+    /* Increase the width to make dropdowns more prominent */
+    height: 42px;
+    padding: 8px;
+    /* Apply the same padding as buttons for consistency */
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    /* Increase border radius for a smoother appearance */
+    /* font-family: "Arial", sans-serif; */
+    font-size: 20px;
+    /* Increase the font size for better readability */
+    margin-top: 10px;
+    /* color: #070736;*/
+    margin-bottom: 10px;
+}
+
+.setting-controls {
+    text-align: left;
+    margin-bottom: 15px;
+    /* Add some margin between setting controls */
+}
+
+
+
+.setting-controls select {
+    width: 60%;
+    padding: 12px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.set-Well {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    width: 66px;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    transition: background 0.3s, color 0.3s;
+    display: inline-block;
+    /* Make the button inline */
+    position: fixed;
+    /* Set the position */
+    top: 184px;
+    /* Adjust the distance from the top */
+    right: 20px;
+    /* Adjust the distance from the left */
+}
+
+
+.set-Well:hover {
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+.set-Timer{
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    width: 66px;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    transition: background 0.3s, color 0.3s;
+    display: inline-block;
+    /* Make the button inline */
+    position: fixed;
+    /* Set the position */
+    top: 283px;
+    /* Adjust the distance from the top */
+    right: 20px;
+    /* Adjust the distance from the left */
+}
+
+.set-Timer:hover {
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+
+.set-Laser {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    width: 66px;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    transition: background 0.3s, color 0.3s;
+    display: inline-block;
+    /* Make the button inline */
+    position: fixed;
+    /* Set the position */
+    top: 383px;
+    /* Adjust the distance from the top */
+    right: 20px;
+    /* Adjust the distance from the left */
+}
+
+.set-Laser:hover {
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+
+
+#machineCloseBtn {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#machineCloseBtn:hover {
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+
+.softwareUpdate-icon {
+    display: flex;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* padding: 22px 32px; */
+    /* border: none; */
+    /* border-radius: 8px; */
+    /* top: 45%; */
+    /* left: 53%; */
+    /* position: fixed; */
+    /* margin: 13px; */
+    /* font-size: 20px; */
+    /* cursor: pointer; */
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    transform: translateX(-50%, -50%);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+
+}
+
+.softwareUpdate-icon:hover {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Adjusted background color on hover */
+    color: rgb(255, 123, 0);
+    /* Adjusted text color on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    /* Adjusted box shadow on hover */
+    outline: 2px solid #fff;
+    /* Added outline on hover */
+}
+
+.input-container-Update {
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    text-align: left;
+    color: #ffffff;
+    width: 520px;
+    height: 200px;
+}
+
+.mmInputToken {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    display: inline-block;
+    color: #000;
+    /* Make the input box inline */
+}
+
+.mmInputpassword {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    display: inline-block;
+    color: #000;
+    /* Make the input box inline */
+}
+
+#updateCloseBtn {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    position: absolute;
+    bottom: 0px;
+    left: 60%;
+    transform: translateX(-50%);
+}
+
+#updateCloseBtn:hover {
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+
+#updateBtn {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    position: absolute;
+    bottom: 0px;
+    left: 40%;
+    transform: translateX(-50%);
+}
+
+#updateBtn:hover {
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+ #softwareUpdateTitle {
+    color: #070736;
+}
+
+
+.styled-button {
+    position: absolute;
+    top: 60px;
+}
+
+.start-icon {
+    width: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 60%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    padding: 17px 22px;
+    border-radius: 15px;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.start-icon img {
+    width: 50px;
+    height: 50px;
+    display: block;
+    /* Remove any extra space around the image */
+    margin: 0 auto;
+    /* Center the image horizontally */
+}
+
+.start-icon span {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.start-icon:hover {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: rgb(255, 123, 0);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    outline: 2px solid #fff;
+}
+
+.start-icon:hover img {
+    transform: scale(1.1);
+    content: url('images/Start-hover-light.png');
+    /* Add transition property for smooth scaling */
+    transition: transform 0.3s;
+}
+
+.pause-icon,
+.resume-icon {
+    width: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 17px 22px;
+    border-radius: 15px;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.pause-icon img,
+.resume-icon img {
+    width: 50px;
+    height: 50px;
+    display: block;
+    /* Remove any extra space around the image */
+    margin: 0 auto;
+    /* Center the image horizontally */
+}
+
+.pause-icon span,
+.resume-icon span {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.pause-icon:hover,
+.resume-icon:hover {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: rgb(255, 123, 0);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    outline: 2px solid #fff;
+}
+
+.pause-icon:hover img {
+    transform: scale(1.1);
+    content: url('images/Pause-hover.png');
+    /* Add transition property for smooth scaling */
+    transition: transform 0.3s;
+}
+
+.resume-icon:hover img {
+    transform: scale(1.1);
+    content: url('images/Resume-hover.png');
+    /* Add transition property for smooth scaling */
+    transition: transform 0.3s;
+}
+
+.reset-icon {
+    width: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 60%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    padding: 17px 22px;
+    border-radius: 15px;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.reset-icon img {
+    width: 50px;
+    /* Adjust the width of the icon as needed */
+    height: 50px;
+    /* Adjust the height of the icon as needed */
+    
+}
+
+.reset-icon span {
+    margin-top: 15px;
+    /* Adjust the spacing between the icon and text */
+    text-align: center;
+    /* Center the text */
+}
+
+.reset-icon:hover {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: rgb(255, 123, 0);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    outline: 2px solid #fff;
+}
+
+.reset-icon:hover img {
+    transform: scale(1.1);
+    content: url('images/Reset-hover-light.png');
+    /* Add transition property for smooth scaling */
+    transition: transform 0.3s;
+}
+
+.set-focus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Center content vertically */
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 70%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    padding: 18px 25px;
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+
+
+.set-focus:hover {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: rgb(255, 123, 0);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    outline: 2px solid #fff;
+}
+
+.set-laser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Center content vertically */
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 70%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    padding: 18px 25px;
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+
+
+.set-laser:hover {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: rgb(255, 123, 0);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    outline: 2px solid #fff;
+}
+
+#goHome {
+    position: absolute;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    /* Smaller font size */
+    background-color: #2e8b57;
+    /* Green background */
+    color: #fff;
+    /* White text color */
+    padding: 10px 15px;
+    /* Slightly smaller padding */
+    border-radius: 10px;
+    /* Rounded corners */
+    text-align: center;
+    /* Center-align text */
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    /* Add a shadow */
+}
+
+.custom-h1-1 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    background-color: #2e8b57;
+    color: #fff;
+    padding: 19px 28px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 4px 3px 5px 0px rgba(2, 1, 1, 0.75);
+}
+
+.custom-h1-2 {
+    position: absolute;
+    top: 20%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    /* Adjust the font size */
+    background-color: #2e8b57;
+    color: #fff;
+    padding: 5px 10px;
+    /* Adjust padding */
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+
+#countdownSeventh {
+    font-size: 100px;
+    position: fixed;
+    top: 20%;
+    /* Center vertically at 50% of the viewport height */
+    left: 50%;
+    /* Center horizontally at 50% of the viewport width */
+    transform: translate(-50%, -50%);
+    /* Adjust to center the element */
+    color: rgb(255, 123, 0);
+}
+
+#timeTitle {
+    color: #070736;
+}
+
+
+/* Dialog box */
+.custom-dialog {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.dialog-content {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 5px;
+    color: #000000;
+    position: relative;
+}
+
+.dialog-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgba(41, 40, 40, 0.459)
+        /* Close button color */
+}
+
+.dialog-close-button:hover {
+    color: #000;
+    /* Close button color on hover */
+}
+
+.dialog-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ff0000;
+}
+
+.dialog-title2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.dialog-message {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.dialog-confirm-button {
+    padding: 10px 20px;
+    color: rgb(255, 123, 0);
+    color: #070736;
+    border: 1px solid #3574b3;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dialog-confirm-button:focus {
+    outline: none;
+}
+
+
+#settingOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent background overlay */
+    z-index: 999;
+    /* Ensure it's above other content */
+}
+
+
+#comOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent background overlay */
+    z-index: 999;
+    /* Ensure it's above other content */
+}
+
+#comSettingPage {
+    margin: auto;
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin-top: 6rem;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    font-family: "Arial", sans-serif;
+}
+
+#settingsTitle {
+    color: #070736;
+}
+
+#machineParameterTitle {
+    color: #070736;
+}
+
+.setting-controls select#comPortDropdown,
+.setting-controls select#baudRateDropdown {
+    width: 100%;
+    /* Increase the width to make dropdowns more prominent */
+    padding: 12px;
+    /* Apply the same padding as buttons for consistency */
+    border: 1px solid #3574b3;
+    /* Add a different border color for dropdowns */
+    border-radius: 8px;
+    /* Increase border radius for a smoother appearance */
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    /* Increase the font size for better readability */
+    margin-top: 10px;
+    color: #070736;
+}
+
+.setting-controls {
+    text-align: left;
+    margin-bottom: 15px;
+    /* Add some margin between setting controls */
+}
+
+.setting-controls label {
+    display: block;
+    width: auto;
+    /* Set width to auto for dynamic width based on content */
+    text-align: left;
+    /* Align the text to the left within the label */
+    margin-bottom: 5px;
+    font-size: 20px;
+    /* Adjust the font size as needed */
+}
+
+
+.setting-controls select {
+    width: 60%;
+    padding: 12px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+select,
+button {
+    padding: 12px;
+    /* Add a different border color for buttons and select elements */
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 20px;
+    /* Increase the font size for better readability */
+    margin-top: 20px;
+    /* Add more margin to the top of buttons to create space between dropdowns and buttons */
+}
+
+button {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    padding: 14px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    margin: 10px;
+}
+
+button:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+/* Style for disabled buttons */
+button:disabled {
+    opacity: 0.5;
+    /* Adjust the opacity to control the level of grey */
+    background-color: #3d3f3d;
+    color: white;
+    cursor: not-allowed;
+}
+
+#data-display {
+    width: 100%;
+    height: 250px;
+    overflow: auto;
+    border: 1px solid #ccc;
+}
+
+#terminal {
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    font-family: "Arial", sans-serif;
+}
+
+
+#terminalTitle {
+    color: #070736;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
+.mt-8 {
+    margin-top: 2rem;
+}
+
+.mt-9 {
+    margin-top: 1rem;
+}
+
+.mt-10 {
+    margin-top: 0rem;
+}
+
+.fsize20 {
+    font-size: 20px;
+}
+
+.fsize25 {
+    font-size: 25px;
+}
+
+.mB-1rem {
+    margin-bottom: 1rem;
+}
+
+.setting-container {
+    max-width: 80%;
+    margin: 10%;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.align {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button-tag {
+    padding: 10px 14px !important;
+    font-size: 18px;
+    margin: 0px !important;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+.mb-0 {
+    margin-bottom: 0px !important;
+}
+
+.cust-close {
+    font-size: 18px !important;
+    padding: 10px 20px !important;
+}
+
+.sender-btn {
+    font-size: 15px !important;
+    padding: 5px 20px !important;
+}
+
+.custw-input {
+    width: 380px !important;
+}
+
+.cust-address {
+    position: absolute;
+    bottom: 13px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+::selection {
+    color: #fff;
+    background: #4671EA;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.wrapper {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100px;
+    width: 607px;
+    background: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    background: #070736;
+}
+
+
+
+
+.wrapper h2 {
+    color: #fff;
+    font-size: 18px;
+}
+
+h2 {
+    color: rgb(7, 7, 63);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+textarea {
+    resize: none;
+    /* Optional: disable textarea resizing */
+    overflow: hidden;
+    /* Optional: hide scrollbar */
+}
+
+
+.wrapper textarea {
+    width: calc(100% - 20px);
+    resize: none;
+    height: calc(50%);
+    outline: none;
+    padding: 1px;
+    font-size: 14px;
+    margin-top: 4px;
+    border-radius: 5px;
+    max-height: 268px;
+    caret-color: #4671EA;
+    border: 1px solid #bfbfbf;
+}
+
+textarea::placeholder {
+    color: #b3b3b3;
+}
+
+textarea:is(:focus, :valid) {
+    padding: 9px;
+    /* Adjust padding as needed */
+    border: 2px solid #4671EA;
+}
+
+textarea::-webkit-scrollbar {
+    width: 0px;
+}
+
+
+
+.laser-beam {
+    position: fixed;
+    top: 5%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: auto;
+    margin-left: 10px;
+}
+
+.small-logo {
+    width: 190px;
+    height: 85px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 20px;
+    margin-right: 40px;
+}
+
+.status_setting {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 145px;
+    width: 337px;
+    background: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    background: #070736;
+}
+
+.status_setting h2 {
+    color: #fff;
+    font-size: 18px;
+}
+
+h2 {
+    color: rgb(7, 7, 63);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+textarea {
+    resize: none;
+    /* Optional: disable textarea resizing */
+    overflow: hidden;
+    /* Optional: hide scrollbar */
+}
+
+
+.status_setting textarea {
+    width: calc(100% - 20px);
+    resize: none;
+    height: 94px;
+    outline: none;
+    padding: 1px;
+    font-size: 14px;
+    margin-top: 4px;
+    border-radius: 5px;
+    max-height: 268px;
+    caret-color: #4671EA;
+    border: 1px solid #bfbfbf;
+}
+
+textarea::placeholder {
+    color: #b3b3b3;
+}
+
+.h4-align {
+    color: red;
+    position: absolute;
+    top: -68px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+}
+
+.authentication-dialog {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.authentication-content {
+    text-align: center;
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    margin: 100px auto;
+    height: 200px;
+    padding: 14px;
+    border-radius: 8px;
+    color: #000000;
+    position: relative;
+    bottom: 7%;
+}
+
+.auth-pass-inp{
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    border-color: #007BFF;
+    color: #333;
+    transition: border-color 0.2s;
+}
+
+.timer-inp{
+    width: 50%;
+    margin-top: 20px;
+    position: relative;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    border-color: #007BFF;
+    color: #333;
+    transition: border-color 0.2s;
+}
+
+.errormsg{
+    color: red;
+    position: relative;
+    left: -2%;
+    bottom: 18%;
+}
+
+.submitbtn {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    margin: 30px;
+    font-family: "Arial", sans-serif;
+    font-size: 15px;
+    position: relative;
+    top: -5%;
+    left: 30%;
+}
+
+.submitbtn:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+.settimerbtn {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 0px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    margin-top: 15px;
+    font-family: "Arial", sans-serif;
+    font-size: 15px;
+    position: relative;
+    left: 35%;
+}
+
+.settimerbtn:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+.pass-lbl{
+    color: black;
+    font-size: 18px;
+}
+
+.timer-lbl{
+    color: black;
+    font-size: 18px;
+}
+
+.download-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.download-content {
+    background: #fff;
+    padding: 55px;
+    border-radius: 8px;
+    text-align: center;
+    position: fixed;
+    left: 37%;
+    top: 24%;
+    height: 190px;
+}
+
+#downloadProgress {
+    width: 100%;
+    height: 50px;
+}
+
+.cancelbtn {
+    background-color: #ccc;
+    color: #333;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    top: 0%;
+    left: 20%;
+}
+
+.cancelbtn:hover {
+    background-color: #ddd;
+}
+
+.card {
+    max-width: 350px;
+    width: 100%;
+    height: 35%;
+    margin: 170px auto;
+    background: #fff;
+    border-radius: 5px;
+    padding: 60px;
+    padding-bottom: 105px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+  .card .title{
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .card .content{
+    margin-top: 20px;
+  }
+  .card label.box {
+    background: #ddd;
+    margin-top: 30px;
+    padding: 22px 12px;
+    display: flex;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+  #single:checked ~ label.first,
+  #dual:checked ~ label.second,
+  #triple:checked ~ label.third{
+    border-color: #8E49E8;
+    background: #d5bbf7;
+  }
+  .card  label.box:hover{
+    background: #d5bbf7;
+  }
+  .card  label.box .circle{
+    height: 22px;
+    width: 22px;
+    background: #ccc;
+    border: 5px solid transparent;
+    display: inline-block;
+    margin-right: 15px;
+    border-radius: 50%;
+    transition: all 0.25s ease;
+    box-shadow: inset -4px -4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .axisname{
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  #single:checked ~ label.first .circle,
+  #dual:checked ~ label.second .circle,
+  #triple:checked ~ label.third .circle{
+    border-color: #8E49E8;
+    background: #fff;
+  }
+  .card  label.box .plan{
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+  .card input[type="radio"]{
+    display: none;
+  }
+
+
+.set-axis {
+    background: rgb(253, 253, 253);
+    color: #070736;
+    width: 80px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 25px;
+    transition: background 0.3s, color 0.3s;
+    display: inline-block;
+    position: fixed;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.set-axis:hover {
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+
+.circular-container {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #070736, #070736);
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 13%;
+    left: 4%;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    outline: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plusX-axisbtn {
+    background-color: #fff;
+    color: #070736;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 40%;
+    left: 67%;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgb(255 255 255 / 60%);
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.plusX-axisbtn:hover {
+    background-color: rgb(255, 123, 0);
+    /* Blue color on hover */
+    color: #fff;
+    /* White text on hover */
+}
+
+.minusX-axisbtn {
+    background-color: #fff;
+    color: #070736;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 40%;
+    left: 8%;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgb(255 255 255 / 60%);
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.minusX-axisbtn:hover {
+    background-color: rgb(255, 123, 0);
+    /* Blue color on hover */
+    color: #fff;
+    /* White text on hover */
+}
+
+.plusY-axisbtn {
+    background-color: #fff;
+    color: #070736;
+    width: 60px;
+    height: 60px;
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    top: 8%;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgb(255 255 255 / 60%);
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+
+.plusY-axisbtn:hover {
+    background-color: rgb(255, 123, 0);
+    /* Blue color on hover */
+    color: #fff;
+    /* White text on hover */
+}
+
+.minusY-axisbtn {
+    background-color: #fff;
+    color: #070736;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    top: 48%;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgb(255 255 255 / 60%);
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.minusY-axisbtn:hover {
+    background-color: rgb(255, 123, 0);
+    /* Blue color on hover */
+    color: #fff;
+    /* White text on hover */
+}
+
+.input-container-axis {
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 39%;
+    left: 67%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    text-align: left;
+    color: #ffffff;
+    outline: 2px solid #fff;
+    width: 480px;
+    height: 176px;
+}
+
+.container-indexing {
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    padding: 270px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    text-align: left;
+    color: #ffffff;
+    width: 500px;
+}
+
+.input-axis-box {
+    display: inline;
+}
+
+.mmInputaxis[readonly] {
+    background-color: #f4f4f4;
+    border-color: #ccc;
+    color: #666;
+    width: 20%;
+    padding: 12px;
+    border: 1px solid #3574b3;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 13px;
+}
+
+/* Style for radio buttons */
+.radio-buttons-container {
+    display: flex;
+    margin-top: 30px;
+  }
+  
+  .radio-buttons-container label {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  
+  .radio-buttons-container input[type="radio"] {
+    margin-right: 18px;
+    transform: scale(2.0); /* Increase the size of the radio button */
+  }
+  
+  /* Style for checked radio button */
+  .radio-buttons-container input[type="radio"]:checked + label {
+    color: #00f; /* Change the color when checked */
+    font-weight: bold; /* Add bold style when checked */
+  }
+  
+
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
+.mt-8 {
+    margin-top: 2rem;
+}
+
+.axis-Next-button {
+    width: 150px;
+    background: rgb(253, 253, 253);
+    color: #070736;
+    /* Set default text color to blue */
+    border: none;
+    position: absolute;
+    top: 120%;
+    right: 50%;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid #3574b3;
+    transition: background 0.3s, color 0.3s;
+    margin: 5px;
+    text-align: center;
+    /* Add margin to create space between buttons */
+}
+
+.axis-Next-button:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+.axis-back-button {
+    width: 150px;
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: none;
+    position: absolute;
+    top: 120%;
+    right: 80%;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid #3574b3;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    margin: 5px;
+    text-align: center;
+    /* Add margin to create space between buttons */
+}
+
+.axis-back-button:hover {
+    background: rgb(255, 123, 0);
+    /* Change background color on hover */
+    color: #fff;
+    /* Set text color to white on hover */
+}
+
+.set-axis-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 55%;
+    left: 57%;
+    transform: translate(-50%, -50%);
+    padding: 11px 58px;
+    margin: 10px;
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+
+
+.set-axis-btn:hover {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: rgb(255, 123, 0);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    outline: 2px solid #fff;
+}
+
+.set-laser-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 55%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    padding: 11px 22px;
+    margin: 10px;
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    outline: 2px solid #fff;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+
+
+.set-laser-btn:hover {
+    background: linear-gradient(to bottom, #fff, rgb(255, 255, 255));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: rgb(255, 123, 0);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    outline: 2px solid #fff;
+}
+
+#setaxisTitel {
+    color: #070736;
+}
+
+
+/* #sixButtonContainer,
+#twelveButtonContainer,
+#twentyfourButtonContainer,
+#ninetySixButtonContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    padding: 35px;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+#sixButtonContainer{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+}
+
+#twelveButtonContainer{
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+}
+
+#twentyfourButtonContainer{
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 8px;
+}
+
+#ninetySixButtonContainer{
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 5px;
+}
+
+.sixCircularButton,
+.twelveCircularButton,
+.twentyfourCircularButton,
+.ninetySixCircularButton {
+    background-color: #3498db;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.sixCircularButton{
+    width: 90px;
+    height: 90px;
+}
+
+.twelveCircularButton{
+    width: 90px;
+    height: 90px;
+}
+
+.twentyfourCircularButton{
+    width: 80px;
+    height: 80px;
+}
+
+.ninetySixCircularButton{
+    width: 60px;
+    height: 60px;
+}
+
+
+.sixCircularButton:hover,
+.twelveCircularButton:hover,
+.twentyfourCircularButton:hover,
+.ninetySixCircularButton:hover {
+    background: #2670b8;
+}
+
+
+.sixCircularButton.selected,
+.twelveCircularButton.selected,
+.twentyfourCircularButton.selected,
+.ninetySixCircularButton.selected {
+    background-color: #d5bbf7;
+    color: #C37CDC;
+}
+
+#wellBackBtn {
+    width: 130px;
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: none;
+    position: fixed;
+    top: 74%;
+    left: 35%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid #3574b3;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    margin: 5px;
+    text-align: center;
+}
+
+#wellBackBtn:hover {
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+ */
+
+ #container96 {
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    width: 80%;
+    max-width: 800px;
+    transform: translate(-50%, -50%);
+    padding: 35px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: left;
+    color: #ffffff;
+}
+
+#ninetySixButtonContainer {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: repeat(8, minmax(0, 1fr));
+    gap: 0px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.ninetySixCircularButton {
+    background-color: #3498db;
+    color: #fff;
+    width: 3vw;
+    height: 3vw;
+    font-size: 1vw;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.ninetySixCircularButton:hover {
+    background: #2670b8;
+}
+
+.ninetySixCircularButton.selected {
+    background-color: #d5bbf7;
+    color: #C37CDC;
+}
+
+#buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#wellBackBtn,
+#wellNextBtn {
+    width: 48%;
+    background: rgb(253, 253, 253);
+    color: #070736;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid #3574b3;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    text-align: center;
+}
+
+#wellBackBtn:hover,
+#wellNextBtn:hover {
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 500px) {
+    #container96 {
+        width: 90%;
+    }
+
+    #ninetySixButtonContainer {
+        padding: 10px;
+    }
+}
+
+
+#container24 {
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    width: 80%;
+    max-width: 700px;
+    transform: translate(-50%, -50%);
+    padding: 35px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: left;
+    color: #ffffff;
+}
+
+#twentyFourButtonContainer {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.twentyFourCircularButton {
+    background-color: #3498db;
+    color: #fff;
+    width: 5vw;
+    height: 5vw;
+    font-size: 1vw;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.twentyFourCircularButton:hover {
+    background: #2670b8;
+}
+
+.twentyFourCircularButton.selected {
+    background-color: #d5bbf7;
+    color: #C37CDC;
+}
+
+ 
+        /* Media query for smaller screens */
+        @media screen and (max-width: 500px) {
+            #container24 {
+                width: 90%;
+            }
+        
+            #twentyFourButtonContainer {
+                padding: 10px;
+            }
+        }
+
+        #container12 {
+            background: linear-gradient(to bottom, #070736, #070736);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 55%;
+            left: 50%;
+            width: 80%;
+            max-width: 500px;
+            transform: translate(-50%, -50%);
+            padding: 35px;
+            border-radius: 10px;
+            display: inline-block;
+            text-align: left;
+            color: #ffffff;
+        }
+        
+        #twelveButtonContainer {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-rows: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .twelveCircularButton {
+            background-color: #3498db;
+            color: #fff;
+            width: 6vw;
+            height: 6vw;
+            font-size: 1vw;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.3s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .twelveCircularButton:hover {
+            background: #2670b8;
+        }
+        
+        .twelveCircularButton.selected {
+            background-color: #d5bbf7;
+            color: #C37CDC;
+        }
+
+/* Media query for smaller screens */
+@media screen and (max-width: 500px) {
+    #container12 {
+        width: 90%;
+    }
+
+    #twelveButtonContainer {
+        padding: 10px;
+    }
+}
+
+#container6 {
+    background: linear-gradient(to bottom, #070736, #070736);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    width: 80%;
+    max-width: 400px;
+    transform: translate(-50%, -50%);
+    padding: 35px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: left;
+    color: #ffffff;
+}
+
+#sixButtonContainer {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.sixCircularButton {
+    background-color: #3498db;
+    color: #fff;
+    width: 6vw;
+    height: 6vw;
+    font-size: 1vw;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.sixCircularButton:hover {
+    background: #2670b8;
+}
+
+.sixCircularButton.selected {
+    background-color: #d5bbf7;
+    color: #C37CDC;
+}
+
+  /* Media query for smaller screens */
+  @media screen and (max-width: 500px) {
+    #container6 {
+        width: 90%;
+    }
+
+    #sixButtonContainer {
+        padding: 10px;
+    }
+}
